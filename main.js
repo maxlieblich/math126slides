@@ -197,7 +197,7 @@ $('#videoButton').click(function (e){
     $('#videoModal > div').width(VIDEO_WIDTH + 60);
     vid.width = VIDEO_WIDTH;
     $(vid).css('display', 'block');
-    vid.src = "video/" + lectures[selectedIndex][0].toString().replace(".", "-") + ".mp4";
+    vid.src = "https://www.math.washington.edu/~lieblich/Math126/video/" + lectures[selectedIndex][0].toString().replace(".", "-") + ".mp4";
 });
 
 $('#videoClose').click(function (e){
