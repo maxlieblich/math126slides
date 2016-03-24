@@ -1,0 +1,250 @@
+<div id="insertedcontent">
+ <section>
+  <h1>
+   Local max/min: theory
+  </h1>
+ </section>
+ <section>
+  <h2>
+   Critical point review
+  </h2>
+  <p class="question">
+   Find all critical points ($(a,b)$ such that $f_x(a,b)=0=f_y(a,b)$) for the following functions.
+  </p>
+  <ul>
+   <li>
+    $f(x,y)=x^2+y^2$
+   </li>
+   <li>
+    $f(x,y)=x^2-y^2$
+   </li>
+   <li>
+    $f(x,y)=\sin(x)\cos(y)$
+   </li>
+   <li>
+    $f(x,y)=x^y$
+   </li>
+   <li>
+    $f(x,y)=x^3+y^3+x+y$
+   </li>
+  </ul>
+  <p class="question">
+   Can you tell which of these critical points are local maxima or minima?
+  </p>
+ </section>
+ <section>
+  <h2>
+   The critical points:
+  </h2>
+  <ul>
+   <li class="slide">
+    $f(x,y)=x^2+y^2$: $(0,0)$
+   </li>
+   <li class="slide">
+    $f(x,y)=x^2-y^2$: $(0,0)$
+   </li>
+   <li class="slide">
+    $f(x,y)=\sin(x)\cos(y)$: all $\left(m\frac{\pi}{2},n\frac{\pi}{2}\right)$ with one of $(m,n)$ odd and the other even (cool!)
+   </li>
+   <li class="slide">
+    $f(x,y)=x^y$: $(1,0)$
+   </li>
+   <li class="slide">
+    $f(x,y)=x^3+y^3+x+y$: none
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2>
+   Are critical points local max/min?
+  </h2>
+  <p id="paraboloidequation" style="float:right;width:150px;margin-right:100px">
+   $x^2+y^2$
+  </p>
+  <p id="hyperboloidequation" style="float:right;width:150px;margin-right:100px">
+   $x^2-y^2$
+  </p>
+  <p id="eggequation" style="float:right;width:150px;margin-right:100px">
+   $\sin(x)\cos(y)$
+  </p>
+  <p id="exponentialequation" style="float:right;width:150px;margin-right:100px">
+   $x^y$
+  </p>
+  <form class="livebutton" id="megalivebutton">
+   <select id="mega" name="graphs">
+    <option value="paraboloid">
+     paraboloid
+    </option>
+    <option value="hyperboloid">
+     hyperboloid
+    </option>
+    <option value="egg">
+     egg carton
+    </option>
+    <option value="exponential">
+     exponential
+    </option>
+   </select>
+  </form>
+  <div id="paraboloidcontainer">
+  </div>
+  <div id="hyperboloidcontainer">
+  </div>
+  <div id="eggcontainer">
+  </div>
+  <div id="exponentialcontainer">
+  </div>
+ </section>
+ <section>
+  <h2>
+   The hyperboloid: a pure example
+  </h2>
+  <p class="slide">
+   It's hard to find a purer example of a critical point that is neither max nor min than the critical point of the hyperboloid.
+  </p>
+  <p class="slide">
+   Near that point the shape curves
+   <span class="important">
+    up in one direction and down in the other.
+   </span>
+   <span class="slide">
+    This is called a
+    <span class="important">
+     saddle point
+    </span>
+    .
+   </span>
+  </p>
+  <div class="slide">
+   <div id="hypcontainer">
+   </div>
+  </div>
+ </section>
+ <section>
+  <h2>
+   Contemplating the egg carton
+  </h2>
+  <p class="slide">
+   The egg carton has an intriguing feature: sometimes the critical points
+   <span class="important">
+    are
+   </span>
+   at local max/min, but sometimes they're
+   <span class="important">
+    not
+   </span>
+   !
+  </p>
+  <p class="slide question">
+   How can we analyze the difference?
+  </p>
+  <p class="slide">
+   Observation: near one of the funny points, the shape looks a like like a hyperboloid: going up in one direction and down in another.
+  </p>
+  <p class="slide">
+   What happened for functions of one variable?
+  </p>
+  <ul>
+   <li class="slide">
+    The sign of the second derivative ruled the roost.
+   </li>
+   <li class="slide">
+    Positive second derivative means local min, negative means local max.
+   </li>
+   <li class="slide">
+    Vanishing second derivative left us alone with our wits.
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2>
+   Second derivatives alone are not enough
+  </h2>
+  <p>
+   Consider the function $f(x,y)=x^2+4xy+y^2$.
+  </p>
+  <div id="quadcontainer" style="float:left;margin-left:30px;">
+  </div>
+  <p>
+   Critical point: $(0,0)$
+  </p>
+  <!--<p>$D(0,0)=-12$</p>-->
+  <p>
+   $f_{xx}(0,0)=2$ and $f_{yy}(0,0)=2$, both positive
+  </p>
+  <p>
+   The graph shows why this isn't enough: the saddle is oriented away from the axes!
+  </p>
+ </section>
+ <section>
+  <h2>
+   Multivariable fix?
+  </h2>
+  <p class="slide">
+   There is an additional piece of information needed to account for both variables.
+   <span class="slide">
+    This is not magic, but it looks like before you know enough theory:
+   </span>
+  </p>
+  <p class="slide">
+   <em>
+    Definition
+   </em>
+   : the
+   <span class="important">
+    Hessian determinant
+   </span>
+   of $f(x,y)$ is the function
+  </p>
+  <p class="slide">
+   $$D(x,y)=f_{xx}f_{yy}-f_{xy}^2.$$
+  </p>
+  <p class="slide">
+   Here, as you learned from the book, $f_{xx}$, $f_{yy}$, and $f_{xy}$ denote
+   <span class="important">
+    second derivatives
+   </span>
+   .
+  </p>
+  <p class="slide">
+   $$f_{xx}=\frac{\partial^2f}{\partial x^2}\qquad f_{yy}=\frac{\partial^2f}{\partial y^2}\qquad f_{xy}=\frac{\partial^2f}{\partial y\partial x}$$
+  </p>
+  <p class="slide">
+   The order of the subscripts is the order in which the derivatives are taken.
+   <span class="important">
+    Be careful: the "denominator" of the partial derivatives will have the variables in the reverse order!
+   </span>
+  </p>
+ </section>
+ <section>
+  <h2>
+   The second derivative test
+  </h2>
+  <p class="slide">
+   Here's the love:
+  </p>
+  <p class="slide">
+   Suppose $f$ has continuous second partial derivatives and $(a,b)$ is a critical point. Then
+  </p>
+  <ul>
+   <li class="slide">
+    if $D \gt 0$ and $f_{xx}(a,b)\gt 0$ then $(a,b)$ is a local minimum;
+   </li>
+   <li class="slide">
+    if $D \gt 0$ and $f_{xx}(a,b)\lt 0$ then $(a,b)$ is a local maximum;
+   </li>
+   <li class="slide">
+    if $D \lt 0$ then $(a,b)$ is a saddle point.
+   </li>
+  </ul>
+  <p class="slide">
+   <span class="important">
+    Achtung!
+   </span>
+   This does not cover all cases!
+  </p>
+  <p class="slide">
+   For example, if $D=0$ we get no love at all from this.
+  </p>
+ </section>
+</div>

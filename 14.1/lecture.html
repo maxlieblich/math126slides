@@ -1,0 +1,129 @@
+<div id="insertedcontent">
+ <section>
+  <h1>
+   Partial Derivatives
+  </h1>
+ </section>
+ <section>
+  <h2>
+   Medical emergency
+  </h2>
+  <p class="slide">
+   Nedwina has defective ankles, but like a true Seattleite she has decided to climb Mt. Rainier. Her doctor says she cannot walk on any surface whose angle with the $xy$-plane is greater than $\pi/3$.
+  </p>
+  <p class="slide">
+   Nedwina knows a nerd who modeled her favorite part of Rainier by the equation $x^3+z^2(y^2+y^3)+x+y+z=0.$
+  </p>
+  <p class="slide question">
+   Can Nedwina stand at the point $(0,0,0)$ without violating her doctor's orders?
+  </p>
+  <p class="slide question">
+   What is the best linear approximation to the surface around the point $(0,0,0)$?
+  </p>
+ </section>
+ <section>
+  <h2>
+   Here's the model with $(0,0,0)$ indicated
+  </h2>
+  <div id="rainiercontainer">
+  </div>
+ </section>
+ <section>
+  <h2>
+   A simpler situation
+  </h2>
+  <p class="slide">
+   Find the tangent plane to the paraboloid $z=x^2+y^2$ at the point $(1,1,2)$.
+  </p>
+  <div class="slide">
+   <div id="oidcontainer">
+   </div>
+  </div>
+ </section>
+ <section>
+  <h2>
+   A silly observation
+  </h2>
+  <p class="slide">
+   If we slice the whole package with a plane, we go from a
+   <span class="important">
+    surface and tangent plane
+   </span>
+   to a
+   <span class="important">
+    curve and tangent line
+   </span>
+   !
+  </p>
+  <div class="slide">
+   <div id="oidslicecontainer" style="float:left;margin-left: 20px">
+   </div>
+   <div id="sliceplot" style="height:300px;width:300px;float:right;margin: 40px 60px 0 0;">
+   </div>
+  </div>
+ </section>
+ <section>
+  <h2>
+   Partial derivatives
+  </h2>
+  <p class="slide">
+   This process of restricting attention to one variable and taking derivatives "with respect to that variable" is called taking
+   <span class="important">
+    partial derivatives
+   </span>
+   .
+  </p>
+  <p class="slide">
+   Formal definition: given a function of two variables $f(x,y)$, the partial derivatives with respect to $x$ and $y$ at a point $(a,b)$ are defined as follows.
+  </p>
+  <p class="slide">
+   $$\frac{\partial f}{\partial x}=f_x(a,b)=\lim_{h\to 0}\frac{f(a+h,b)-f(a,b)}{h}$$
+  </p>
+  <p class="slide">
+   $$\frac{\partial f}{\partial y}=f_y(a,b)=\lim_{h\to 0}\frac{f(a,b+h)-f(a,b)}{h}$$
+  </p>
+  <p class="slide">
+   Rules
+  </p>
+  <ul>
+   <li class="slide">
+    Treat one variable as a constant
+   </li>
+   <li class="slide">
+    Differentiate with respect to the other one
+   </li>
+   <li class="slide">
+    Rejoice
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2>
+   Example
+  </h2>
+  <p class="slide">
+   For example, consider the function $f(x,y)=x^2+y^2$. To compute the partial derivative with respect to $x$, we
+   <span class="important">
+    treat $y$ as a constant
+   </span>
+   and do the usual one-variable differentiation:
+  </p>
+  <p class="slide">
+   $$\frac{\partial f}{\partial x}=2x.$$
+  </p>
+  <p class="slide question">
+   Do some! Compute the partial derivatives with respect to $x$ and $y$ of these functions.
+  </p>
+  <ul>
+   <li class="slide">
+    $f(x,y)=\sin(x)\cos(y)$
+   </li>
+   <li class="slide">
+    $f(x,y)=x^y$
+   </li>
+   <li class="slide">
+    $f(x,y)=y^5$
+   </li>
+  </ul>
+ </section>
+</div>

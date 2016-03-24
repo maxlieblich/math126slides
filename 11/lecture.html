@@ -1,0 +1,225 @@
+<div id="insertedcontent">
+ <section class="slide">
+  <h1>
+   Tangents, normals, binormals
+  </h1>
+ </section>
+ <section class="slide">
+  <h2 class="question">
+   Consider the electron spiraling around the torus.
+  </h2>
+  <p>
+   The vector description:
+  </p>
+  <p class="slide">
+   $$\mathbf f(t)=\langle \cos(t)(2-\cos(4t)),\sin(t)(2-\cos(4t)),\sin(4t)\rangle$$
+  </p>
+  <ul>
+   <li class="slide">
+    What plane best approximates (makes most contact with) the path followed by the electron? (Any guesses?)
+   </li>
+   <li class="slide">
+    How can we measure the twisting of the path in three-dimensional space?
+   </li>
+   <li class="slide">
+    Earlier: curvature measures curvature of path, but does not capture direction of curving.
+   </li>
+  </ul>
+ </section>
+ <section class="slide">
+  <h2>
+   Visualizing changes with vectors, I
+  </h2>
+  <p>
+   Here's a model of the electron path with the
+   <span style="color:#00ff00">
+    unit tangent
+   </span>
+   vector $\mathbf T(t)$ attached.
+  </p>
+  <div id="tangentcontrols" style="float:right;font-size:small;width:210px">
+  </div>
+  <div id="tangentcontainer">
+  </div>
+ </section>
+ <section class="slide">
+  <h2>
+   How can we recover more of the curving structure?
+  </h2>
+  <p class="slide">
+   Take the derivative of the unit tangent vector!
+  </p>
+  <p class="slide">
+   <span class="important">
+    Definition:
+   </span>
+   the
+   <span class="important">
+    unit normal vector
+   </span>
+   to the parametrized path $\mathbf f(t)$ with unit tangent vector $\mathbf T(t)$ is defined to be $$\mathbf N(t)=\frac{\mathbf T'(T)}{|\mathbf T'(t)|}.$$
+  </p>
+  <p class="slide">
+   We are normalizing the derivative of the unit tangent so that we can get as close to bare intrinsic geometry as possible.
+  </p>
+  <p class="slide">
+   Why is this called a normal vector?
+  </p>
+  <ul>
+   <li class="slide">
+    Because $\mathbf T(t)\cdot\mathbf T'(t)=0$, as you saw in the "Curvature" lecture segment.
+   </li>
+  </ul>
+ </section>
+ <section class="slide">
+  <h2>
+   Visualizing changes with vectors, II
+  </h2>
+  <p>
+   Here's a model of the electron path with the
+   <span style="color:#00ff00">
+    unit tangent
+   </span>
+   and
+   <span style="color:#ff00ff">
+    unit normal
+   </span>
+   both attached.
+  </p>
+  <div id="tangentnormalcontrols" style="float:right;font-size:small;width:210px">
+  </div>
+  <div id="tangentnormalcontainer">
+  </div>
+ </section>
+ <section class="slide">
+  <h2>
+   Try an example
+  </h2>
+  <p class="slide">
+   Consider the helix
+  </p>
+  <p class="slide">
+   $$\mathbf h(t)=\langle\cos(t),\sin(t),t\rangle$$
+  </p>
+  <ul>
+   <li class="slide">
+    Calculate the unit tangent vector $\mathbf T(t)$
+   </li>
+   <li class="slide">
+    Calculate the unit normal vector $\mathbf N(t)$
+   </li>
+  </ul>
+ </section>
+ <section class="slide">
+  <h2>
+   But wait, there's more!
+  </h2>
+  <p class="slide">
+   Take the cross product now for a free third vector!
+  </p>
+  <p class="slide">
+   <span class="important">
+    Definition:
+   </span>
+   the
+   <span class="important">
+    binormal vector
+   </span>
+   at time $t$ is the unit vector
+  </p>
+  <p class="slide">
+   $$\mathbf B(t)=\mathbf T(t)\times\mathbf N(t).$$
+  </p>
+  <p class="slide">
+   Together, the vectors $\mathbf T(t),\mathbf N(t),\mathbf B(t)$ form a triad of unit vectors satisfying the right-hand rule. This is called a
+   <em>
+    frame
+   </em>
+   .
+  </p>
+  <ul>
+   <li class="slide">
+    Complete your unit tangent and unit normal to get the full frame for the helix $\mathbf h(t)=\langle\cos(t),\sin(t),t\rangle$
+   </li>
+  </ul>
+ </section>
+ <section class="slide">
+  <h2>
+   Visualizing changes with vectors, III
+  </h2>
+  <p>
+   Here's a model of the electron path with the
+   <span style="color:#00ff00">
+    unit tangent
+   </span>
+   ,
+   <span style="color:#ff00ff">
+    unit normal
+   </span>
+   , and
+   <span style="color:#0000ff">
+    binormal vectors
+   </span>
+   all attached. Observe that the unit normal explains the changes in direction of the unit tangent. The binormal is a bit more mysterious at the moment.
+  </p>
+  <div id="wholeframecontrols" style="float:right;font-size:small;width:210px">
+  </div>
+  <div id="wholeframecontainer">
+  </div>
+ </section>
+ <section class="slide">
+  <h2>
+   What does this do for us?
+  </h2>
+  <p class="slide">
+   We can find the normal plane and the osculating plane!
+  </p>
+  <p class="slide">
+   Osculating: kiss
+  </p>
+  <p class="slide">
+   You probably never thought you would be finding planes that kiss curves in your calculus class.
+  </p>
+  <ul>
+   <li class="slide important">
+    Math is fun
+   </li>
+  </ul>
+  <p class="slide">
+   The
+   <span class="important">
+    osculating plane
+   </span>
+   is the plane spanned by $\mathbf T$ and $\mathbf N$. The
+   <span class="important">
+    normal plane
+   </span>
+   is the plane spanned by $\mathbf N$ and $\mathbf B$.
+  </p>
+  <p class="slide">
+   <span class="question">
+    Do one:
+   </span>
+   calculate the osculating plane and the normal plane to the helix at time $t$.
+  </p>
+ </section>
+ <section class="slide">
+  <h2>
+   More problems to think about
+  </h2>
+  <ul>
+   <li>
+    What are the osculating and normal planes of a parametric curve $(x(t),y(t),0)$?
+   </li>
+   <li>
+    Does the osculating plane depend upon the parametrization? E.g., what about the crazy helix $(\cos(t^2),\sin(t^2),t^2)$?
+   </li>
+   <li>
+    How do the osculating planes of the electron's path on the torus relate to the tangent planes of the torus?
+   </li>
+   <li>
+    How awesome is this?
+   </li>
+  </ul>
+ </section>
+</div>

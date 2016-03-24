@@ -1,0 +1,150 @@
+<div id="insertedcontent">
+ <section>
+  <h1>
+   Differentials
+  </h1>
+ </section>
+ <section>
+  <h2>
+   Nedwina Cummerbund and the Ankles of Doom
+  </h2>
+  <p class="slide">
+   Nedwina is standing on her favorite part of Rainier, given by the equation $x^3+z^2(y^2+y^3)+x+y+z=0.$
+  </p>
+  <p class="slide">
+   The tangent plane: $x+y+z=0$.
+  </p>
+  <p class="slide">
+   The angle with the $xy$-plane is the angle between the normal vectors $\langle 1,0,0\rangle$ and $\langle 1,1,1\rangle$: $\cos(\theta)=\frac{1}{\sqrt{3}}$.
+  </p>
+  <p class="slide">
+   The angle is about $54.74^\circ$, slightly less than the $60^\circ$ limit set by the doctor. Phew!
+  </p>
+  <p class="slide">
+   Nedwina has her pet slug Boffo with her. Boffo is very sensitive to changes in elevation. He asks, sliming with fear:
+  </p>
+  <p class="slide question">
+   "How many cm higher or lower will I be if you follow the path that goes 2cm in the $x$ direction and 1 cm in the $y$ direction?"
+  </p>
+ </section>
+ <section>
+  <h2>
+   Centimeters are small
+  </h2>
+  <p class="slide">
+   For making small changes, we can use the linear approximation to the function!
+  </p>
+  <ul>
+   <li class="slide">
+    The best linear approximation to the nerd's model of Rainier at $(0,0,0)$ is the function $z=-x-y$.
+   </li>
+   <li class="slide">
+    Tiny changes in $x$ and $y$: $\Delta x=0.02$ meters and $\Delta y=0.01$ meters.
+   </li>
+   <li class="slide">
+    We get $\Delta z=-\Delta x-\Delta y=-0.03$ meters, or $3$ centimeters lower.
+   </li>
+   <li class="slide">
+    Boffo will not explode.
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2>
+   Name for this: differentials
+  </h2>
+  <p class="slide">
+   These tiny changes are called
+   <span class="important">
+    differentials
+   </span>
+   , and our best linear approximation lets us compute them.
+  </p>
+  <p class="slide">
+   <span class="important">
+    General formula:
+   </span>
+   if $z=f(x,y)$ then $dz=f_x(x,y)dx+f_y(x,y)dy$. We get the tiny change in $z$ coming from that tiny change in the position of the point $(x,y)$ using the partial derivatives according to the formula.
+  </p>
+  <p class="slide question">
+   Try one: find the differentials of $f(x,y)=x^y$.
+  </p>
+ </section>
+ <section>
+  <h2>
+   Help the piglet
+  </h2>
+  <p class="slide">
+   Find all of the mistakes in this solution: the differential at the point $(a,b,a^b)$ is
+  </p>
+  <p class="slide">
+   $$dz=yx^{y-1}(x-a)+a^b\ln(a)ydy$$
+  </p>
+  <div class="slide">
+   <p class="slide">
+    <span class="important">
+     Correct solution:
+    </span>
+    the differential at $(a,b,a^b)$ is given by
+    <span class="centermath">
+     $$dz=ba^{b-1}dx+a^b\ln(a)dy.$$
+    </span>
+   </p>
+  </div>
+ </section>
+ <section>
+  <h2>
+   A real-world example
+  </h2>
+  <p class="slide question">
+   Roughly how much cheese (in cubic meters) did we shave off a cylinder of cheese of radius $1$ and height $4$ if it ends up with radius $0.99$ and height $3.98$?
+  </p>
+  <ul>
+   <li class="slide">
+    Make a model of the volume depending upon two variables.
+   </li>
+   <li class="slide">
+    Use the differential formula to estimate the change.
+   </li>
+   <li class="slide">
+    Eat a piece of pizza.
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2>
+   The piglet of calculus is wondering....
+  </h2>
+  <p class="slide">
+   Can we find a differentiable function whose differential in any direction is positive?
+  </p>
+  <ul>
+   <li class="slide">
+    If so, find one.
+   </li>
+   <li class="slide">
+    If not, explain why not.
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2>
+   OK, the piglet has a refined question
+  </h2>
+  <p class="slide">
+   Can we find a differentiable function $f(x,y)$ and a point $(a,b)$ so that the
+   <span class="important">
+    actual
+   </span>
+   changes when we jiggle the point are all positive?
+  </p>
+  <ul>
+   <li class="slide">
+    If so, find one.
+   </li>
+   <li class="slide">
+    If not, explain why not.
+   </li>
+  </ul>
+ </section>
+</div>

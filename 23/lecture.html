@@ -1,0 +1,143 @@
+<div id="insertedcontent">
+    <section>
+        <h1>Even higher order approximation</h1>
+    </section>
+
+    <section>
+        <h2>Nedwina and the piglet won't stop playing the market</h2>
+        <p class="slide">
+            It's still 1999, still before the bursting of the tech stock bubble, and Nedwina and the piglet of calculus have stock market fever.
+        </p>
+        <p class="slide">
+            Nedwina and the piglet have calculated every Taylor polynomial $T_n(t)$ of the DJIA.
+        </p>
+        <p class="slide question">
+            Do they have perfect information? Can they now play the market with impunity?
+        </p>
+        <p class="slide question">
+            In purely mathematical terms: can we reconstruct a function from its Taylor polynomials?
+        </p>
+    </section>
+    <section>
+        <h2>Let's think about some examples</h2>
+        <p class="slide">
+            How about $f(x)=\sin(x)$?
+        </p>
+        <p class="slide">
+            We know the Taylor polynomials, say around $b=0$: for $n=2m+1$,
+        </p>
+        <p class="slide">
+            $$T_n(x)=\sum_{i=0}^m(-1)^i\frac{x^{2i+1}}{(2i+1)!}.$$
+        </p>
+        <ul class="slide">
+            <li>
+                $T_1(x)=x$
+            </li>
+            <li>
+                $T_3(x)=x-\frac{x^3}{3!}$
+            </li>
+            <li>
+                $T_5(x)=x-\frac{x^3}{3!}+\frac{x^5}{5!}$
+            </li>
+            <li>
+                $T_7(x)=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}.$
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h2>Fix $x$, feel the love.</h2>
+        <p class="slide">
+            Given a value of $x$ and any $n=2m+1$, using the techniques we learned last time, we can bound the error like this:
+        </p>
+        <p class="slide">
+            $|\sin(x)-T_n(x)|\leq \frac{|x^{n+2}|}{(n+2)!}$.
+        </p>
+        <p class="slide question">
+            What happens as we let $n$ grow?
+        </p>
+        <p class="slide">
+            <span class="important">Theorem:</span> for a fixed $x$, $\lim_{N\to\infty}\frac{x^N}{N!}=0$.
+        </p>
+        <p class="slide">
+            Idea: pick an integer $M$ such that $x\leq M$. Then $\frac{x^{M+K}}{(M+K)!}=\frac{x}{1}\cdot\cdots\cdot\frac{x}{M}\cdot\frac{x}{M+1}\cdots\cdot\frac{x}{M+K}$. The first dotted clump is some fixed number, while the second has every factor less than $1$ and in fact decreasing. Since $\lim_{Q\to\infty}\frac{x}{Q}=0$, we are done.
+        </p>
+    </section>
+    <section>
+        <h2>$\infty$ bottles of beer on the wall....</h2>
+        <p class="slide">
+            We seem to be seeing the following: for any value of $x$ we know that $\lim_{n\to\infty}T_n(x)=\sin(x)$.
+        </p>
+        <p class="slide">
+            More suggestively,
+        </p>
+        <p class="slide">
+            $$\sin(x)=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\cdots=\sum_{i=0}^\infty (-1)^i\frac{x^{2i+1}}{(2i+1)!}.$$
+        </p>
+        <p class="slide">
+            We call this an "infinite sum," but of course we can't add infinitely many things.
+        </p>
+        <p class="slide">
+            As a function of $x$, this infinite sum is called the <span class="important">Taylor series expansion</span> of $\sin(x)$.
+        </p>
+        <p class="slide">
+            To compute $\sin(x)$ to arbitrary accuracy, we just have to take enough terms to ensure that the error is low.
+        </p>
+    </section>
+    <section>
+        <h2>Example</h2>
+        <p class="slide">
+            Let's see what happens if we try to compute $\sin(\pi)=\pi-\pi^3/3!+\pi^5/5!-\cdots$ using the different approximations.
+        </p>
+        <ul>
+            <li class="slide">
+                $T_1(\pi)=\pi=3.14159269....$. Good approximation?
+            </li>
+            <li class="slide">
+                $T_3(\pi)=-2.02612....$
+            </li>
+            <li class="slide">
+                $T_5(\pi)=0.524044....$
+            </li>
+            <li class="slide">
+                $T_7(\pi)=-0.0752206$
+            </li>
+            <li class="slide">
+                $T_9(\pi)=0.00692527$
+            </li>
+            <li class="slide">
+                $T_{19}(\pi)\approx 5.28918\times 10^{-10}$. (This is pretty good, but not really that great, eh?)
+            </li>
+        </ul>
+        <p class="slide question">
+            Why do the signs alternate?
+        </p>
+    </section>
+    <section>
+        <h2>Make some!</h2>
+        <p class="slide">
+            Write down the Taylor series $\sum_{i=1}^\infty f^{(n)}(b)\frac{(x-b)^n}{n!}$ of the following functions around the given points.
+        </p>
+        <ul>
+            <li class="slide">
+                $f(x)=e^x$ around $b=0$
+            </li>
+            <li class="slide">
+                $f(x)=\frac{1}{1-x}$ around $b=0$
+            </li>
+            <li class="slide">
+                $f(x)=1+x+x^2+x^3+427x^7$ around $b=0$
+            </li>
+            <li class="slide">
+                $f(x)=\frac{1}{1-x}$ around $b=2$
+            </li>
+            <li class="slide">
+                $f(x)=e^{-1/x^2}$ around $b=0$
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h2></h2>
+        <a href="http://www.mathjax.org/"> <img title="Powered by MathJax"
+                                                src="http://www.mathjax.org/badge.gif" border="0" alt="Powered by MathJax"/> </a><a href="http://www.w3.org/html/logo/"> <img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-graphics-multimedia-semantics.png" width="229" height="64" alt="HTML5 Powered with CSS3 / Styling, Graphics, 3D &amp; Effects, Multimedia, and Semantics" title="HTML5 Powered with CSS3 / Styling, Graphics, 3D &amp; Effects, Multimedia, and Semantics"> </a>
+    </section>
+</div>

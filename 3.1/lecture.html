@@ -1,0 +1,271 @@
+<div id="insertedcontent">
+ <section>
+  <h1>
+   Dot products
+  </h1>
+ </section>
+ <section>
+  <h2>
+   Warm up
+  </h2>
+  <p>
+   Let's start with a few natural questions about vectors that arise in the world.
+  </p>
+ </section>
+ <section>
+  <h2>
+   Warm up
+  </h2>
+  <p>
+   <span class="question">
+    Question
+   </span>
+   : a light shines perpendicularly down onto the plane $x+y+z=0$.
+        Can we calculate the shadow of the vector $\langle 3,4,5\rangle$ in the plane?
+        (Natural question for computer graphics, architecture, etc. )
+  </p>
+  <div id="projcontainer">
+  </div>
+ </section>
+ <section>
+  <h2>
+   Warm up
+  </h2>
+  <p>
+   <b class="question">
+    Similar:
+   </b>
+   a light shines perpendicularly down onto the plane $z=0$.
+        How can we calculate the shadow of the vector $\langle 3,4,5\rangle$ in the plane?
+  </p>
+ </section>
+ <section>
+  <h2>
+   Warm up
+  </h2>
+  <p>
+   <b class="question">
+    Similar:
+   </b>
+   a light shines perpendicularly down onto the plane $z=0$. How can we calculate the shadow of the vector $\langle 3,4,5\rangle$ in the plane?
+  </p>
+  <p>
+   Can you draw a picture of this one?
+  </p>
+ </section>
+ <section>
+  <h2>
+   Warm up
+  </h2>
+  <p>
+   <b class="question">
+    Similar:
+   </b>
+   a light shines perpendicularly down onto the plane $z=0$. How can we calculate the shadow of the vector $\langle 3,4,5\rangle$ in the plane?
+  </p>
+  <p>
+   Can you draw a picture of this one?
+  </p>
+  <p>
+   <b class="question">
+    Answer:
+   </b>
+  </p>
+ </section>
+ <section>
+  <h2>
+   Warm up
+  </h2>
+  <p>
+   <b class="question">
+    Similar:
+   </b>
+   a light shines perpendicularly down onto the plane $z=0$. How can we calculate the shadow of the vector $\langle 3,4,5\rangle$ in the plane?
+  </p>
+  <p>
+   Can you draw a picture of this one?
+  </p>
+  <p>
+   <b class="question">
+    Answer:
+   </b>
+   projecting into the $xy$-plane just forgets about the $z$-component!
+  </p>
+ </section>
+ <section>
+  <h2>
+   Warm up
+  </h2>
+  <p>
+   <b class="question">
+    Question:
+   </b>
+   given two vectors in $\mathbf R^3$, how can we compute the angle between them?
+  </p>
+  <div id="angcontainer">
+  </div>
+ </section>
+ <section>
+  <h2>
+   Today
+  </h2>
+  <div class="incremental">
+   <p>
+    We'll learn about a marvelous tool for answering these questions called the
+    <span class="definition">
+     dot product
+    </span>
+    .
+   </p>
+   <p>
+    As with components and addition of vectors, coordinates allow us to calculate the geometry.
+   </p>
+   <p>
+    As simple as they seem, the ideas we'll discuss here tap into one of the richest veins of ideas in mathematics.
+   </p>
+  </div>
+ </section>
+ <section>
+  <h2>
+   Definition
+  </h2>
+  <p>
+   The
+   <span class="definition">
+    dot product
+   </span>
+   of two vectors
+  </p>
+  <p>
+   $$\mathbf a=\langle a_1,a_2,a_3\rangle\textrm{  }\mathbf b=\langle b_1,b_2,b_3\rangle$$
+  </p>
+  <p>
+   is the number
+  </p>
+  <p>
+   $$\mathbf a\cdot\mathbf b=a_1b_1+a_2b_2+a_3b_3.$$
+  </p>
+ </section>
+ <section>
+  <h2>
+   Definition
+  </h2>
+  <p>
+   The
+   <span class="definition">
+    dot product
+   </span>
+   of two vectors
+  </p>
+  <p>
+   $$\mathbf a=\langle a_1,a_2,a_3\rangle\textrm{  }\mathbf b=\langle b_1,b_2,b_3\rangle$$
+  </p>
+  <p>
+   is the number
+  </p>
+  <p>
+   $$\mathbf a\cdot\mathbf b=a_1b_1+a_2b_2+a_3b_3.$$
+  </p>
+  <p class="important">
+   Note: this is a number (scalar), not a vector!
+  </p>
+  <div class="incremental">
+   <h3>
+    Examples
+   </h3>
+   <ul class="incremental">
+    <li>
+     $\langle 1, 2, 3\rangle\cdot\langle 3, 0, 1\rangle = 1\cdot 3+2\cdot 0+3\cdot 1=6$
+    </li>
+    <li>
+     $\langle 2, 5\rangle\cdot\langle 5, -2\rangle = 2\cdot 5 + 5\cdot(-2) = 0$
+    </li>
+   </ul>
+  </div>
+ </section>
+ <section>
+  <h2>
+   Practice
+  </h2>
+  <p>
+   Compute these dot products (build a data set for your inner child!):
+  </p>
+  <ul style="line-height: 150%">
+   <li>
+    $\langle 1,0,0\rangle\cdot\langle 2,3,7\rangle$
+   </li>
+   <li>
+    $\mathbf i\cdot\mathbf j$ (you know what $\mathbf i$ and $\mathbf j$ are because you read the book!)
+   </li>
+   <li>
+    $\mathbf i\cdot\mathbf i$
+   </li>
+   <li>
+    take a point $(x,y,z)$ in the plane $x+y+z=0$ and compute $\langle x,y,z\rangle\cdot\langle 1,1,1\rangle$
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2>
+   Observations
+  </h2>
+  <ul class="incremental" style="line-height: 200%">
+   <li>
+    $\mathbf i$ and $\mathbf j$ are perpendicular, and $\mathbf i\cdot\mathbf j=0$
+   </li>
+   <li>
+    $\mathbf i$ has length $1$, and $\mathbf i\cdot\mathbf i=1$
+   </li>
+   <li class="question">
+    Coincidence?
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2>
+   Sweet Theorem
+  </h2>
+  <p>
+   Given two vectors $\mathbf a$ and $\mathbf b$, the angle $\theta$ between them satisfies
+  </p>
+  <p>
+   $$\mathbf a\cdot\mathbf b=|\mathbf a||\mathbf b|\cos(\theta).$$
+  </p>
+  <img src="3.1/lecture3_3.png" style="background-color: transparent; position: relative; left: 0; top: -300px">
+  </img>
+ </section>
+ <section>
+  <h2>
+   Sweet Theorem
+  </h2>
+  <p>
+   Given two vectors $\mathbf a$ and $\mathbf b$, the angle $\theta$ between them satisfies
+  </p>
+  <p>
+   $$\mathbf a\cdot\mathbf b=|\mathbf a||\mathbf b|\cos(\theta).$$
+  </p>
+  <p>
+   Since by convention we always take the angle between two vectors to lie between $0$ and $\pi$ radians,
+        this determines $\theta$
+   <span class="important">
+    uniquely
+   </span>
+   .
+   <div class="incremental">
+    <p>
+     This theorem shows how the dot product relates to both
+     <span class="important">
+      angle
+     </span>
+     and
+     <span class="important">
+      length
+     </span>
+    </p>
+    <p>
+     Let's see how we can leverage this for both angles and lengths.
+    </p>
+   </div>
+  </p>
+ </section>
+</div>

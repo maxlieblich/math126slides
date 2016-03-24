@@ -1,0 +1,197 @@
+<div id="insertedcontent">
+ <section class="slide">
+  <h1>
+   Vector valued functions: practice
+  </h1>
+ </section>
+ <section class="slide">
+  <h2>
+   One method: projection
+  </h2>
+  <p class="slide">
+   This is a fancy say to saying: ignore some coordinates and try to describe the simpler motion.
+   <span class="slide">
+    We already saw that ignoring coordinates is one way of casting a shadow.
+   </span>
+  </p>
+  <ul>
+   <li class="slide">
+    What happens if we ignore the $z$ coordinate of the electron on the cylinder?
+   </li>
+   <li class="slide">
+    Same as projecting the path into the $xy$-plane! (Looking down from above.)
+   </li>
+   <li class="slide">
+    What is that projection in this case?
+   </li>
+  </ul>
+ </section>
+ <section class="slide">
+  <h2>
+   Image in the $xy$-plane
+  </h2>
+  <p>
+   The projection of the electron into the plane just moves in a circle.
+  </p>
+  <ul>
+   <li class="slide">
+    The radius is $1$.
+   </li>
+   <li class="slide">
+    It moves at $1$ radian per second.
+   </li>
+   <li class="slide">
+    What are the $x$ and $y$ coordinates as functions of $t$?
+   </li>
+  </ul>
+  <p class="slide">
+   The usual trigonometric formulas give
+  </p>
+  <p class="slide" style="text-align:center;color:red">
+   REDACTED
+  </p>
+ </section>
+ <section class="slide">
+  <h2>
+   Image in the $xy$-plane
+  </h2>
+  <p>
+   The projection of the electron into the plane just moves in a circle.
+  </p>
+  <ul>
+   <li>
+    The radius is $1$.
+   </li>
+   <li>
+    It moves at $1$ radian per second.
+   </li>
+   <li>
+    What are the $x$ and $y$ coordinates as functions of $t$?
+   </li>
+  </ul>
+  <p>
+   The usual trigonometric formulas give
+  </p>
+  <p>
+   $$(x(t),y(t))=(\cos(t),\sin(t)).$$
+  </p>
+ </section>
+ <section class="slide">
+  <h2>
+   What about $z$?
+  </h2>
+  <p class="slide">
+   The key is the timing of the revolutions.
+  </p>
+  <ul>
+   <li class="slide">
+    One revolution takes $2\pi$ seconds.
+   </li>
+   <li class="slide">
+    It should take four revolutions to get to the top ($z=4$), so $8\pi$ seconds.
+   </li>
+   <p class="slide">
+    Thus, $z(t)=4\cdot t/8\pi=t/2\pi$.
+   </p>
+   <p class="slide">
+    Putting it all together:
+   </p>
+   <p class="slide">
+    $(x(t),y(t),z(t))=(\cos(t),\sin(t),t/2\pi).$
+   </p>
+  </ul>
+  <p>
+   &nbsp;
+  </p>
+ </section>
+ <section class="slide">
+  <h2>
+   A parametric description of the torus
+  </h2>
+  <p>
+   Given two numbers $t$ and $u$ between $0$ and $2\pi$, we get a point on a torus of radius $2$ and tube radius $1$ like this:
+  </p>
+  <p class="slide">
+   $$\begin{align*}
+            x(t,u)&amp;=\cos(t)(2-\cos(u))\\
+            y(t,u)&amp;=\sin(t)(2-\cos(u))\\
+            z(t,u)&amp;=\sin(u)
+            \end{align*}$$
+  </p>
+  <p class="slide">
+   If you fix $u$, the $t$-path is a circle around the torus. If you fix $t$, the $u$-path is a circle around the
+   <q>
+    tube
+   </q>
+   .
+   <p class="slide">
+    <span class="question">
+     Use this to make a spiral path around the torus that starts at $(1,0,0)$ and
+            winds around the tube $4$ times before it returns to its starting point.
+    </span>
+   </p>
+   <p>
+    <span class="slide important">
+     Hint:
+    </span>
+    <span class="slide">
+     substitute for $u$ as a function of $t$ to make the two act in concert!
+    </span>
+   </p>
+  </p>
+ </section>
+ <section class="slide">
+  <h2>
+   A parametric description of the torus
+  </h2>
+  <p>
+   Given two numbers $t$ and $u$ between $0$ and $2\pi$, we get a point on a torus of radius $2$ and tube radius $1$ like this:
+  </p>
+  <p>
+   $$\begin{align*}
+            x(t,u)&amp;=\cos(t)(2-\cos(u))\\
+            y(t,u)&amp;=\sin(t)(2-\cos(u))\\
+            z(t,u)&amp;=\sin(u)
+            \end{align*}$$
+  </p>
+  <p>
+   If you fix $u$, the $t$-path is a circle around the torus. If you fix $t$, the $u$-path is a circle around the
+   <q>
+    tube
+   </q>
+   .
+   <p>
+    <span class="question">
+     Use this to make a spiral path around the torus that starts at $(1,0,0)$ and
+            winds around the tube $4$ times before it returns to its starting point.
+    </span>
+    <p>
+     <span class="important">
+      Think about this for next time!
+     </span>
+    </p>
+   </p>
+  </p>
+ </section>
+ <section class="slide">
+  <h2 class="question">
+   Question
+  </h2>
+  <p class="slide">
+   Two tiny cars travel on paths
+  </p>
+  <p class="slide">
+   $$\begin{align*}
+            (x,y,z)&amp;=(\cos(t),\sin(t),0)\\
+            (x',y',z')&amp;=(0,\cos(t),\sin(t))
+            \end{align*}
+            $$
+  </p>
+  <p class="slide">
+   Will they collide?
+  </p>
+  <p class="slide">
+   Now suppose the second car travels at a different speed so that $(x',y',z')=(0,\cos(\alpha t),\sin(\alpha t))$. For which constants $\alpha$ will the tiny cars collide?
+  </p>
+ </section>
+</div>

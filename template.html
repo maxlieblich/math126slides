@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Lecture 1</title>
+    <meta name="viewport" content="width=960, user-scalable=no">
+    <!-- Any other extension CSS files go here. -->
+    <!-- Core and extension CSS files -->
+    <link rel="stylesheet" href="../deck/core/deck.core.css">
+    <link rel="stylesheet" href="../deck/extensions/goto/deck.goto.css">
+    <link rel="stylesheet" href="../deck/extensions/menu/deck.menu.css">
+    <link rel="stylesheet" href="../deck/extensions/navigation/deck.navigation.css">
+    <link rel="stylesheet" href="../deck/extensions/status/deck.status.css">
+    <link rel="stylesheet" href="../deck/extensions/hash/deck.hash.css">
+    <link rel="stylesheet" href="../deck/extensions/scale/deck.scale.css">
+    <!-- Theme CSS files (menu swaps these out) -->
+    <!--<link rel="stylesheet" id="style-theme-link" href="../deck/themes/style/swiss.css">-->
+    <!--<link rel="stylesheet" id="transition-theme-link" href="../deck/themes/transition/fade.css">-->
+    <!-- Math 126 css file -->
+    <link rel="stylesheet" href="../math126noscale.css">
+    <!-- Replace path with correct path to Modernizr file. -->
+    <script src="../deck/modernizr.custom.js"></script>
+    <script src="../spin.min.js"></script>
+</head>
+<body>
+<article id="deck" class="deck-container">
+<script src="../gospin.js"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<section>
+    <h3 id="loadinghead" style="margin: 2% auto">Loading</h3>
+    <p id="modelstatus"></p>
+    <p id="loadingtext"></p>
+</section>
+<section>
+    <h3>Instructions</h3>
+    <p>
+        These slides should work with <em>any</em> modern browser: IE 9+, Safari 5+, Firefox 9+, Chrome 16+.
+    </p>
+    <ul>
+        <li>
+            Navigate with arrow keys; you may need to give the window focus by clicking outside the lecture frame (the pig) for key commands described throughout this slide to work properly.
+        </li>
+        <li>
+            Press M to see a menu of slides. Press G to go to a specific slide.
+            Press W to toggle scaling of the deck with the window. If scaling is off, slides will be 800 by 600; it is off by default.
+        </li>
+        <li>
+            Use left click, middle click, right click or hold A, S, D on the keyboard and move the mouse to rotate, scale, or pan the object.
+        </li>
+    </ul>
+    <p>
+        If your browser or hardware does not support WebGL,
+        interacting with models will be <em>very</em> slow (and in general models can get CPU-intensive).
+        Navigate to a slide away from any running model to stop model animation.
+    </p>
+</section>
+
+<!-- SLIDES HERE -->
+<div id="insertedcontent"></div>
+
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+<p class="deck-status">
+    <span class="deck-status-current"></span>
+    / <span class="deck-status-total"></span>
+</p>
+<form action="." method="get" class="goto-form">
+    <label for="goto-slide">Go to slide:</label>
+    <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+    <datalist id="goto-datalist"></datalist>
+    <input type="submit" value="Go">
+</form>
+</article>
+<footer></footer>
+<script src="../deck/jquery-1.7.2.min.js"></script>
+<script type="text/javascript">
+    $('#deck').fadeTo(10, 0.1)
+    MathJax.Hub.queue.Push(stopspinning);
+</script>
+<!-- Other extension HTML snippets go here, at the bottom of the deck container. -->
+<!-- Update these paths to point to the correct files. -->
+<script src="../deck/core/deck.core.js"></script>
+<!-- Add any other extension JS files here -->
+<script src="../deck/core/deck.core.js"></script>
+<script src="../deck/extensions/hash/deck.hash.js"></script>
+<script src="../deck/extensions/menu/deck.menu.js"></script>
+<script src="../deck/extensions/goto/deck.goto.js"></script>
+<script src="../deck/extensions/status/deck.status.js"></script>
+<script src="../deck/extensions/navigation/deck.navigation.js"></script>
+<script src="../deck/extensions/scale/deck.scale.js"></script>
+<script>
+    initialize = function () {
+        $('section').addClass('slide');
+        $('.incremental').children().addClass('slide');
+        $('.incremental.slide').removeClass('slide');
+        $.deck('.slide', {
+            keys : {
+                scale : 87
+            }
+        });
+        //w key turns scaling on and off, off by default
+        $.deck('disableScale');
+    }
+   $(initialize());
+</script>
+<script src="../three.min.js"></script>
+<script src="../ArrowHelperFixed.js"></script>
+<script src="../TrackballControls.js"></script>
+<script src="../MathModel.js"></script>
+<script src="../Detector.js"></script>
+<script src="../dat.gui.min.js"></script>
+<script src="../flot/jquery.flot.js"></script>
+<script src="../flot/jquery.flot.navigate.js"></script>
+<script src="models.js"></script>
+</body>
+</html>

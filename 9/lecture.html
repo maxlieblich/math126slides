@@ -1,0 +1,208 @@
+<div id="insertedcontent">
+ <section>
+  <h1>
+   Polar Coordinates
+  </h1>
+ </section>
+ <section>
+  <h2 class="question">
+   How does radar work?
+  </h2>
+  <div>
+   <p>
+    Antenna sweeps around broadcasting signal.
+   </p>
+   <p>
+    Signal bounces off of objects and comes back.
+   </p>
+   <p>
+    Radar records the direction and distance to locate the object.
+   </p>
+  </div>
+  <iframe frameborder="0" height="150" src="http://player.vimeo.com/video/27417526?title=0&amp;byline=0&amp;portrait=0" style="margin-top: 5%" width="400">
+  </iframe>
+ </section>
+ <section>
+  <h2>
+   Descartes is cool. So is radar.
+  </h2>
+  <p class="slide">
+   The radar uses a
+   <span class="important">
+    different coordinate system
+   </span>
+   . To locate a point in the plane one can:
+  </p>
+  <ul>
+   <li class="slide">
+    Find its distance $r$ from the origin.
+   </li>
+   <li class="slide">
+    Find its angle $\theta$ counterclockwise from the $x$-axis.
+   </li>
+   <li class="slide">
+    The pair $(r,\theta)$ determines the location of the point, with one
+    <span class="red">
+     caveat
+    </span>
+    :
+    <span class="red">
+     one point can have several different sets of polar coordinates!
+    </span>
+    . (Give infinitely many examples. Now.)
+   </li>
+  </ul>
+  <div class="slide">
+   <div id="democontrols" style="float:right;margin-right:10px;font-size:small">
+   </div>
+   <div id="democontainer" style="height: 250px; width: 400px">
+   </div>
+  </div>
+ </section>
+ <section>
+  <h2>
+   Code name: polar coordinates
+  </h2>
+  <ul>
+   <li class="slide">
+    We can convert back and forth:
+    <span class="centermath">
+     $$x=r\cos(\theta), y=r\sin(\theta)$$
+    </span>
+    (like sending a code from East Berlin to West Berlin in 1974).
+   </li>
+   <li class="slide">
+    Example: the point with polar coordinates $(r,\theta)=(7,\pi)$ has Cartesian coordinates
+    <span class="centermath">
+     $$(x,y)=(7\cos(\pi),7\sin(\pi))=(-7,0).$$
+    </span>
+   </li>
+   <li class="slide">
+    Converting in other direction is more fun: first, $r=\sqrt{x^2+y^2}$.
+                To get the angle, you could try to use
+    <span class="centermath">
+     $$\tan(\theta)=\frac{y}{x}$$
+    </span>
+    when this makes sense, or you could use one of the formulas $x=r\cos(\theta)$ or $y=r\sin(\theta)$. Use eyeballs and brain(s).
+   </li>
+   <li class="slide">
+    Most fun:
+    <span class="slide">
+     <span class="important">
+      graphing equations
+     </span>
+     .
+    </span>
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2>
+   Examples
+  </h2>
+  <ul>
+   <li class="slide">
+    <span class="question">
+     What is the polar equation of a circle of radius $a$ around the origin?
+    </span>
+    <ul>
+     <li class="slide">
+      $r=a$
+     </li>
+    </ul>
+   </li>
+   <li class="slide">
+    <span class="question">
+     What is the polar equation of the line $x=3$?
+    </span>
+    <ul>
+     <li class="slide">
+      $r\cos(\theta)=3$
+     </li>
+    </ul>
+   </li>
+   <li class="slide question">
+    Try one: find the polar equation of the line $y=2x+5$.
+   </li>
+   <li class="slide question">
+    Try another one: find the polar equation of the ellipse $\frac{1}{2}x^2+\frac{1}{3}y^2=1$
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2>
+   Polar graphs are beautiful
+  </h2>
+  <h3>
+   Here are some examples
+  </h3>
+  <p>
+   You can play with the parameters and see what happens!
+  </p>
+ </section>
+ <section>
+  <h2>
+   Examples
+  </h2>
+  <p>
+   $r=\theta^{\textrm{power}}$, $0\leq\theta\leq \textrm{multiple}\cdot\pi$
+   <span id="plotstickers1controls" style="float: right;font-size: small">
+   </span>
+  </p>
+  <div id="plotstickers1" style="width: 470px; height: 470px; margin-left: auto; margin-right:auto; margin-top: 80px;">
+  </div>
+ </section>
+ <section>
+  <h2>
+   Examples
+  </h2>
+  <p>
+   $r=\sin(\textrm{love}\cdot\theta)$, $0\leq\theta\leq \textrm{multiple}\cdot\pi$
+   <span id="plotstickers2controls" style="float: right;font-size: small">
+   </span>
+  </p>
+  <div id="plotstickers2" style="width: 470px; height: 470px; margin-left: auto; margin-right:auto; margin-top: 80px;">
+  </div>
+ </section>
+ <section>
+  <h2>
+   Examples
+  </h2>
+  <p>
+   $r=c+\sin(\textrm{love}\cdot\theta)$, $0\leq\theta\leq \textrm{multiple}\cdot\pi$
+   <span id="plotstickers3controls" style="float: right;font-size: small">
+   </span>
+  </p>
+  <div id="plotstickers3" style="width: 470px; height: 470px; margin-left: auto; margin-right:auto; margin-top: 80px;">
+  </div>
+ </section>
+ <section>
+  <h2>
+   Try some the other way!
+  </h2>
+  <p class="slide">
+   Example: the Cartesian equation of the curve with polar equation
+   <span class="centermath">
+    $$r=\sin(\theta)$$
+   </span>
+   is $$x^2+\left(y-\frac{1}{2}\right)^2=\frac{1}{4}.$$
+  </p>
+  <p class="slide">
+   <span class="important">
+    Trick:
+   </span>
+   multiply both sides by $r$, yielding $r^2=r\sin\theta$, then use $r^2=x^2+y^2$ and $r\sin\theta=y$.
+  </p>
+  <ul class="slide">
+   <li>
+    What is the Cartesian equation corresponding to $r=\sin(\theta)+\cos(\theta)$?
+   </li>
+   <li>
+    How about $r=\cos(\theta)$?
+   </li>
+   <li>
+    Or $r^2=\sec(\theta)$?
+   </li>
+  </ul>
+ </section>
+</div>

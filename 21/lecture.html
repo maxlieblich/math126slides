@@ -1,0 +1,232 @@
+<div id="insertedcontent">
+ <section>
+  <h1>
+   Errors in linear approximation
+  </h1>
+ </section>
+ <section>
+  <h2>
+   Nedwina and the piglet play the market
+  </h2>
+  <p class="slide">
+   It's 1999, right before the bursting of the tech stock bubble, and Nedwina and the piglet of calculus have stock market fever.
+  </p>
+  <p class="slide">
+   (This is not a good sign.)
+  </p>
+  <p class="slide">
+   Their friend, the Slimy Stock Snail, tells them that the best linear approximation to the Dow Jones Industrial Average is
+  </p>
+  <p class="slide">
+   $$f(t)=10000+3000t,$$
+  </p>
+  <p class="slide">
+   where $t$ is the time in days from now.
+  </p>
+  <p class="slide question">
+   What could go wrong?
+  </p>
+ </section>
+ <section>
+  <h2>
+   More precisely:
+  </h2>
+  <p class="slide">
+   What kinds of additional information do Nedwina and the piglet need to evaluate the accuracy of the linear approximation?
+  </p>
+  <p class="slide">
+   Can they be sure that the projection will be within 5000 of the correct value in one year?!?!
+  </p>
+ </section>
+ <section>
+  <h2>
+   Examples
+  </h2>
+  <p class="slide">
+   Let's start with some simple minded examples. Here are a bunch of functions with derivative $0$ at $t=0$:
+  </p>
+  <ul class="slide">
+   <li>
+    $f(t)=t^2$
+   </li>
+   <li>
+    $f(t)=t^3$
+   </li>
+   <li>
+    $f(t)=\cos(t)-1$
+   </li>
+   <li>
+    $f(t)=t^{10}$
+   </li>
+  </ul>
+  <p class="slide">
+   In each case, the best linear approximation around $t=0$ is the function $L(t)=0$.
+  </p>
+  <p class="slide question">
+   How can we capture the error in this approximation at $t=730$, i.e., how can we bound the absolute value $|L(730)-f(730)|$?
+  </p>
+ </section>
+ <section>
+  <h2>
+   Photographic evidence
+  </h2>
+  <p>
+   Here's a graph showing all of the functions between $t=0$ and $t=2$
+  </p>
+  <div id="graphcontainer" style="height:400px;width:350px;float:left;margin-right:10px">
+  </div>
+  <p class="slide">
+   None of the functions is especially close, but some are
+   <span class="important">
+    much worse
+   </span>
+   than others.
+  </p>
+  <p class="slide">
+   The "rate of climb" of each graph seems to predict how far off the approximation is.
+  </p>
+  <p class="slide">
+   <em>
+    <span class="important">
+     The pig is tingling
+    </span>
+   </em>
+   : grasping the first derivative seems to help bound errors?
+  </p>
+ </section>
+ <section>
+  <h2>
+   If you know more, you actually more, I
+  </h2>
+  <p class="slide">
+   How about we start with a crudely wonderful estimate of values of the function:
+  </p>
+  <p class="slide">
+   <span class="important">
+    Theorem:
+   </span>
+   if there is a number $M$ such that $|f'(x)|\leq M$ for all $x$ between $b$ and $c$ then
+   <span class="centermath">
+    $$|f(c)-f(b)|\leq M|c-b|.$$
+   </span>
+  </p>
+  <p class="slide">
+   Indication of proof:
+   <span class="centermath">
+    $$|f(c)-f(b)|=\left|\int_b^c f'(x)dx\right|\leq\left|\int_b^c |f'(x)|dx\right|\leq\left|\int_b^c Mdx\right|=M|c-b|.$$
+   </span>
+  </p>
+  <p class="slide">
+   <span class="important">
+    Example:
+   </span>
+   $f(x)=\sin(x)$: $|f'(x)|\leq 1$ for all $x$, so $|f(c)-f(b)|\leq|c-b|$ for all $b,c$.
+  </p>
+  <p class="slide question">
+   How good an estimate is this?
+  </p>
+ </section>
+ <section>
+  <h2>
+   If you know more, you actually know more, II
+  </h2>
+  <p class="slide">
+   If we know about more derivatives, we get
+   <span class="important">
+    <em>
+     EVEN MORE
+    </em>
+   </span>
+   .
+  </p>
+  <p class="slide">
+   Given a differentiable function $f(t)$ and a point $b$ where $f$ is defined, the best linear approx to $f(t)$ near $b$ is $L_b(t)=f(b)+f'(b)(t-b)$.
+  </p>
+  <p class="slide">
+   <span class="important">
+    Theorem:
+   </span>
+   if $M$ is a number such that $|f''(x)|\leq M$ for all $x$ between $b$ and $c$ then $|L_b(c)-f(c)|\leq \frac{1}{2}M|c-b|^2$.
+  </p>
+ </section>
+ <section>
+  <h2>
+   <span class="important">
+    Examples
+   </span>
+  </h2>
+  <ul>
+   <li class="slide">
+    $f(t)=t^{10}$: $|f''(t)|\leq 10\cdot 9\cdot 2^8=23040$ for $0\leq t\leq 2$, so $|L_0(2)-f(2)|\leq 46080$ (ugh?)
+   </li>
+   <li class="slide">
+    $f(t)=\sin(t)$: $|f''(t)|\leq 1$ for all $t$, so for any value $c$ we have $|L_b(c)-f(c)|\leq \frac{1}{2}|c-b|^2$.
+   </li>
+   <li class="slide question">
+    When (for which $b$) is this estimate of the error in the linear approximation to $\sin$ good? When is it terrible?
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2>
+   Do one!
+  </h2>
+  <p class="slide">
+   In our example: $L_0(t)=10000+3000t$.
+  </p>
+  <ul>
+   <li class="slide question">
+    What bound on $|f''(x)|$ for $0\leq x\leq 730$ will ensure Nedwina and the piglet that the Stock Snail's estimate is within 
+                10000 of the DJIA by the end of year 2 (day 730)?
+   </li>
+   <li class="slide question">
+    What bound on $|f''(x)|$ for $0\leq x\leq 730$ will ensure that Nedwina and the piglet do not see the DJIA end up
+    <strong>
+     below
+    </strong>
+    5000 by year 2 (day 730)?
+   </li>
+   <li class="slide question">
+    Which is a stronger (i.e., harder to achieve) assumption?
+   </li>
+   <!--            <li class="slide question">
+                Assuming the DJIA follows a power law $f(t)=10000+t^\alpha$, 
+                which values of $\alpha$ will ensure that Nedwina and the piglet do not see the DJIA dip below 5000 in year 2?
+            </li>-->
+  </ul>
+ </section>
+ <section>
+  <h2>
+   Do one backwards!
+  </h2>
+  <p class="slide question">
+   Consider the function $f(t)=\cos(t)$. Find a number $c$ such that on the interval $[\pi/2,c]$,
+            the linear approximation $L_{\pi/2}(t)$ to $f(t)$ is always within $0.01$ of $f(t)$.
+  </p>
+  <p class="slide">
+   <span class="important">
+    Hint:
+   </span>
+   try to bound the second derivative, and 
+            combine this with the theorem: $|f''(x)|\leq M$ implies $|L_b(x)-f(x)|\leq\frac{1}{2}M|x-b|^2$.
+  </p>
+ </section>
+ <section>
+  <h2>
+   Do another one!
+  </h2>
+  <p class="slide">
+   Do the same deal for the function $f(t)=1/t$, approximated near $t=1$ with an accuracy of $10^{-7}$.
+  </p>
+ </section>
+ <section>
+  <h2>
+   Theoretical question
+  </h2>
+  <p class="slide">
+   Given a twice continuously differentiable function $f$, 
+            what if we know that for every value $t=b$, there is an interval $[b,c]$ 
+            such that $f''(x)=0$ for $x\in[b,c]$? Can we say (or conjecture) anything about the structure of $f$?
+  </p>
+ </section>
+</div>

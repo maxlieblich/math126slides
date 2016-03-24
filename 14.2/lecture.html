@@ -1,0 +1,164 @@
+<div id="insertedcontent">
+ <section>
+  <h1>
+   Tangent planes
+  </h1>
+ </section>
+ <section>
+  <h2>
+   Tangent planes to graphs
+  </h2>
+  <p class="slide">
+   One of the main uses of partial derivatives is in producing tangent planes.
+  </p>
+  <p class="slide">
+   <span class="important">
+    Theorem:
+   </span>
+   for a function $f(x,y)$, the tangent plane to the graph $z=f(x,y)$ at the point $(a,b,c)$ is given by the equation
+  </p>
+  <p class="slide">
+   $$z-c=f_x(a,b)(x-a)+f_y(a,b)(y-b)$$
+  </p>
+  <p class="slide">
+   <span class="important">
+    Example:
+   </span>
+   $f(x,y)=x^2+y^2$, $(a,b,c)=(1,1,2)$, get the plane
+  </p>
+  <p class="slide">
+   $$z-2=2(x-1)+2(y-1).$$
+  </p>
+  <p class="slide question">
+   Why does this make sense?
+  </p>
+  <ul>
+   <li class="slide">
+    If we take a vertical or horizontal trace, the tangent plane should give the tangent line. Does it?
+   </li>
+   <li class="slide">
+    The partial derivatives seem to capture just a vertical and horizontal trace. Is that really enough?
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2 class="question">
+   Try one!
+  </h2>
+  <p class="slide">
+   Calculate the tangent plane to the graph of the function
+   <span class="centermath">
+    $$f(x,y)=\sin(x)\cos(y)$$
+   </span>
+   at the point $(a,b,\sin(a)\cos(b))$.
+  </p>
+  <p class="slide">
+   General formula for $f(x,y)$ at $(a,b,c)$:
+  </p>
+  <p class="slide">
+   $$z-c=f_x(a,b)(x-a)+f_y(a,b)(y-b)$$
+  </p>
+ </section>
+ <section>
+  <h2>
+   Big but
+  </h2>
+  <p class="slide">
+   Our nerd's Rainier model does not express $z$ as a function of $x$ and $y$:
+  </p>
+  <p class="slide">
+   $$x^3+z^2(y^2+y^3)+x+y+z=0$$
+  </p>
+  <p class="slide">
+   What should we do?
+  </p>
+  <div class="slide">
+   <ul>
+    <li class="slide">
+     Think of $z$ as an
+     <span class="important">
+      implicit
+     </span>
+     function of $x$ and $y$!
+    </li>
+    <li class="slide">
+     Do you remember how implicit differentiation works?
+    </li>
+   </ul>
+  </div>
+ </section>
+ <section>
+  <h2>
+   Implicit partial derivatives
+  </h2>
+  <p class="slide">
+   Follow the procedure you learned in the days of yore. Let's focus on partial derivatives with respect to $x$.
+  </p>
+  <ul>
+   <li class="slide">
+    <span class="important">
+     Pretend $z$ is a function of $x$ and $y$ is a constant
+    </span>
+    , so we have a partial derivative $\partial z/\partial x$.
+   </li>
+   <li class="slide">
+    Use the product rule, chain rule, etc., to take the derivative of the relation.
+   </li>
+   <li class="slide">
+    Solve for $\partial z/\partial x$ in terms of $x$, $y$, $z$.
+   </li>
+  </ul>
+  <p class="slide">
+   Example: for the cone $z^2=x^2+y^2$ we get $2zz_x=2x$, so for $z\neq 0$ we have
+   <span class="centermath">
+    $$\frac{\partial z}{\partial x}=\frac{x}{z}.$$
+   </span>
+  </p>
+ </section>
+ <section>
+  <h2>
+   Tangent plane to cone
+  </h2>
+  <p class="slide">
+   Continuing the cone example, at a point $(a,b,c)$ of the circular cone $z^2=x^2+y^2$, we have $z_x(a,b)=a/c$ and $z_y(a,b)=b/c$. Thus, the tangent plane is
+  </p>
+  <p class="slide">
+   $$z-c=\frac{a}{c}(x-a)+\frac{b}{c}(y-b),$$
+  </p>
+  <p class="slide">
+   or, equivalently,
+  </p>
+  <p class="slide">
+   $$c(z-c)=a(x-a)+b(y-b).$$
+  </p>
+  <p class="slide">
+   For kicks, let's expand that:
+  </p>
+  <p class="slide">
+   $$cz-c^2=ax-a^2+by-b^2.$$
+  </p>
+  <p class="slide">
+   Since $c^2=a^2+b^2$, we can simplify this to $cz=ax+by$.
+   <span class="important">
+    Nice!
+   </span>
+  </p>
+  <p class="slide">
+   Bizarre note: if we scale $a$, $b$, and $c$ by the same number, the tangent plane does not change. Is there a reason for this?
+  </p>
+ </section>
+ <section>
+  <h2>
+   Your turn!
+  </h2>
+  <p class="question">
+   Find the tangent plane to Mt. Rainier at $(0,0,0)$.
+  </p>
+  <p class="slide">
+   The equation is $x^3+z^2(y^2+y^3)+x+y+z=0.$
+  </p>
+  <p class="slide question">
+   Is the plane too steep for Nedwina?
+  </p>
+ </section>
+</div>

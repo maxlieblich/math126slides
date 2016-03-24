@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Math 126</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Any other extension CSS files go here. -->
+    <!-- Core and extension CSS files -->
+    <link rel="stylesheet" href="deck/core/deck.core.css">
+    <link rel="stylesheet" href="deck/extensions/goto/deck.goto.css">
+    <link rel="stylesheet" href="deck/extensions/menu/deck.menu.css">
+    <link rel="stylesheet" href="deck/extensions/navigation/deck.navigation.css">
+    <link rel="stylesheet" href="deck/extensions/status/deck.status.css">
+    <link rel="stylesheet" href="deck/extensions/hash/deck.hash.css">
+    <!-- Math 126 css file -->
+    <link rel="stylesheet" href="math126simple.css">
+    <!-- Replace path with correct path to Modernizr file. -->
+    <!--<link rel="stylesheet" href="deck/extensions/fit/deck.fit-fs.css">-->
+
+    <script src="deck/modernizr.custom.js"></script>
+    <script src="spin.min.js"></script>
+    <script src="deck/jquery-1.7.2.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Math 126</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+            <li class="dropdown" data-toggle="tooltip" data-placement="right" title data-original-title="Lecture list">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="icon-chevron-down icon-large"></i>
+                </a>
+                <ul class="dropdown-menu">
+                <ul id="lectureList" class="dropdown-menu scroll-menu"></ul>
+                    <li class="disabled"><a href="#">Scroll for full list</a></li>
+                </ul>
+            </li>
+            <li data-toggle="tooltip" data-placement="right" title data-original-title="Display mode">
+                <a id="settingsButton" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="icon-cogs icon-large"></i>
+                </a>
+                <ul class="dropdown-menu" id="modeList">
+                    <li class="active">
+                        <a href="#">Reading mode</a>
+                    </li>
+                    <li>
+                        <a href="#">Presentation mode</a>
+                    </li>
+                </ul>
+            </li>
+            <li id="pdfButton" data-toggle="tooltip" data-placement="bottom" title data-original-title="Download PDF">
+                <a href="#">
+                    <i class="icon-download-alt icon-large"></i>
+                </a>
+            </li>
+            <li id="videoButton" data-toggle="tooltip" data-placement="bottom" title data-original-title="Play video">
+                <a data-toggle="modal" href="#videoModal">
+                    <i class="icon-desktop icon-large"></i>
+                </a>
+            </li>
+            <li data-toggle="tooltip" data-placement="bottom" title data-original-title="Schedule">
+                <a data-toggle="modal" href="#scheduleModal">
+                    <i class="icon-calendar icon-large"></i>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li id="prevLectureButton" data-toggle="tooltip" data-placement="bottom" title data-original-title="Previous segment">
+                <a href="#">
+                    <i class="icon-arrow-left icon-large"></i>
+                </a>
+            </li>
+            <li id="nextLectureButton" data-toggle="tooltip" data-placement="bottom" title data-original-title="Next segment">
+                <a href="#">
+                    <i class="icon-arrow-right icon-large">
+                    </i>
+                </a>
+            </li>
+            <li data-toggle="tooltip" data-placement="bottom" title data-original-title="Instructions">
+                <a data-toggle="modal" href="#instructionsModal">
+                    <i class="icon-question-sign icon-large"></i>
+                </a>
+            </li>
+            <li data-toggle="tooltip" data-placement="bottom" title data-original-title="Class mascot">
+                <a data-toggle="modal" href="#pigModal"><i class="icon-heart icon-large"></i></a>
+            </li>
+        </ul>
+    </div><!-- /.navbar-collapse -->
+</nav>
+
+<div class="modal fade" id="videoModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="videoClose">&times;</button>
+                <h4 class="modal-title">Enjoy this video</h4>
+            </div>
+            <div class="modal-body">
+                <video id="videoPlayer" controls>
+                    Me will no show you video. Use a modern browser instead. Sorry!
+                </video>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="pigModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">The piglet of calculus is on your side</h4>
+            </div>
+            <div class="modal-body">
+                <!--<div id="pig">-->
+                    <img src="pig.jpg" style="height: 100%; width: 100%">
+                 <!--</div>-->
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="instructionsModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Instructions</h4>
+            </div>
+            <div class="modal-body">
+                <div id="instructions">
+                    <p>
+                        These slides should work with <em>any</em> modern browser: IE 9+, Safari 5+, Firefox 9+, Chrome 16+.
+                    </p>
+                    <ul>
+                        <li>Choose a lecture from the <i class="icon-chevron-down"></i> dropdown.
+                            The lecture slides are designed to be viewed in fullscreen mode (F11 on most browsers).
+                            The <i class="icon-download-alt"></i> button takes you to a printable version.
+                            The <i class="icon-desktop"></i> button opens a video of the current lecture segment.
+                        </li>
+                        <li>The <i class="icon-cogs"></i> dropdown allows you to set "Reading mode" or "Presentation mode".
+                            In presentation mode, you can step through the lecture the way it happens in class.
+                            Some slides are revealed in steps.
+                            In reading mode, each slide is fully visible right away.</li>
+                        <li>
+                            Navigate by swiping or using arrow keys.
+                            You may need to give the window focus by clicking outside the lecture frame
+                            for key commands described throughout this slide to work properly.
+                        </li>
+                        <li>
+                            Press M to see a menu of slides. Press G to go to a specific slide.
+                        </li>
+                        <li>
+                            When interacting with 3D objects,
+                            use left click, middle click, right click or hold A, S, D on the keyboard and move the mouse
+                            to rotate, scale, or pan the object.
+                        </li>
+                    </ul>
+                    <p>
+                        If your browser or hardware does not support WebGL,
+                        interacting with models will be <em>very</em> slow (and in general models can get CPU-intensive).
+                        Navigate to a slide away from any running model to stop model animation.
+                    </p>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="scheduleModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Schedule</h4>
+            </div>
+            <div class="modal-body">
+                <div id="schedule">
+                    <p>
+                        This course is designed to take around ten weeks. Here is a rough breakdown of lecture segments by week.
+                    </p>
+                    <ul>
+                        <li>
+                            Week 1: all lecture segments through 3.4.
+                        </li>
+                        <li>
+                            Week 2: all lecture segments through 6.
+                        </li>
+                        <li>
+                            Week 3: all lecture segments through 8.3.
+                        </li>
+                        <li>
+                            Week 4: all lecture segments through 10.3.
+                        </li>
+                        <li id="firstMidterm">
+                            First exam covers first four weeks.
+                        </li>
+                        <li>
+                            Week 5: all lecture segments through 12.
+                        </li>
+                        <li>
+                            Week 6: all lecture segments through 15.2.
+                        </li>
+                        <li>
+                            Week 7: all lecture segments through 17.3.
+                        </li>
+                        <li>
+                            Week 8: all lecture segments through 20.2.
+                        </li>
+                        <li id="secondMidterm">
+                            Second exam covers second four weeks.
+                        </li>
+                        <li>
+                            Week 9: all lecture segments through 23.
+                        </li>
+                        <li>
+                            Week 10: all lecture segments through 25.
+                        </li>
+                        <li id="finalExam">
+                            Enjoyable final exam covers everything.
+                        </li>
+                    </ul>
+                    <p id="currentWeek" style="visibility:hidden">
+                        The current course week is 1.
+                    </p>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<article id="deck" class="deck-container">
+    <script src="gospin.js"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    <!-- SLIDES HERE -->
+    <div id="seedDiv"></div>
+    <div id="contentStart"></div>
+    <div id="divider"></div>
+    <div id="contentEnd"></div>
+
+    <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+    <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+    <p class="deck-status">
+        <span class="deck-status-current"></span>
+        / <span class="deck-status-total"></span>
+    </p>
+    <form action="." method="get" class="goto-form">
+        <label for="goto-slide">Go to slide:</label>
+        <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+        <datalist id="goto-datalist"></datalist>
+        <input type="submit" value="Go">
+    </form>
+</article>
+<footer></footer>
+<script type="text/javascript">
+    $('#deck').fadeTo(10, 0.1);
+    try {
+        MathJax.Hub.queue.Push(stopspinning);
+    } catch(e) {
+        stopspinningTest();
+    }
+</script>
+<!-- Other extension HTML snippets go here, at the bottom of the deck container. -->
+<!-- Update these paths to point to the correct files. -->
+<!--<script src="./deck.core-mod.js"></script>-->
+<!-- Add any other extension JS files here -->
+<script src="deck/core/deck.core.js"></script>
+<script src="deck/extensions/hash/deck.hash.js"></script>
+<script src="deck/extensions/menu/deck.menu.js"></script>
+<script src="deck/extensions/goto/deck.goto.js"></script>
+<script src="deck/extensions/status/deck.status.js"></script>
+<script src="deck/extensions/navigation/deck.navigation.js"></script>
+<script src="deck/extensions/scale/deck.scale.js"></script>
+<!--<script src="deck/extensions/fit/deck.fit.js"></script>-->
+<script>
+
+
+</script>
+<script src="three.min.js"></script>
+<script src="ArrowHelperFixed.js"></script>
+<script src="TrackballControls.js"></script>
+<script src="MathModel.js"></script>
+<script src="Detector.js"></script>
+<script src="dat.gui.min.js"></script>
+<script src="flot/jquery.flot.js"></script>
+<script src="flot/jquery.flot.navigate.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

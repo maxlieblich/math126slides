@@ -1,0 +1,136 @@
+<div id="insertedcontent" xmlns="http://www.w3.org/1999/html">
+ <section>
+  <h1>
+   Arc length
+  </h1>
+ </section>
+ <section>
+  <h2>
+   Distance vs arc length
+  </h2>
+  <div class="incremental">
+   <p>
+    <span class="red">
+     Important:
+    </span>
+    the integrals in the "Distance" lecture segment give the
+    <b>
+     total distance traveled
+    </b>
+    .
+   </p>
+   <p>
+    If you
+    <span class="red">
+     never reverse direction
+    </span>
+    , you are also computing the length of the path,
+            not just your choice of traversal.
+   </p>
+   <p>
+    The physical length of the path is the
+    <span class="red">
+     arc length
+    </span>
+    .
+   </p>
+  </div>
+ </section>
+ <section>
+  <h2>
+   Practical arc length, II
+  </h2>
+  <div class="incremental">
+   <p>
+    Here's a funny special case. Suppose that $|\mathbf f'(t)|=1$ for all $t$.
+            Then the distance traversed from time $0$ to time $T$ is
+            $$s(T)=\int_0^T|\mathbf f'(t)|dt=\int_0^T1dt=T.$$
+   </p>
+   <p>
+    In typical circumstances (called
+    <q>
+     smooth
+    </q>
+    : $\mathbf f'(t)$ is never $0$),
+            one can
+    <span class="important">
+     reparametrize
+    </span>
+    the curve using arc length instead of $t$.
+   </p>
+   <p>
+    Example: for the unit circle, the arc length parametrization is
+            $$\langle x,y\rangle=\langle\cos(s),\sin(s)\rangle.$$
+   </p>
+   <p>
+    Meaning: the arc length as $s$ goes from $0$ to $T$ is $T$!
+   </p>
+  </div>
+ </section>
+ <section>
+  <h2>
+   Practical arc length, II
+  </h2>
+  <div class="incremental">
+   <p>
+    A parametric vector function $\mathbf f(t)$ is
+    <span class="red">
+     parametrized by arc length
+    </span>
+    or
+                an
+    <span class="red">
+     arc length parametrization
+    </span>
+    if the arc length traced by $\mathbf f$ between
+                $t=a$ and $t=b$ is $b-a$.
+   </p>
+   <p>
+    $$\int_a^b|\mathbf f'(t)|dt=b-a$$
+   </p>
+   <p>
+    How do you find these things?
+   </p>
+   <ul class="incremental">
+    <li>
+     Start with a parametrization: $\mathbf f(t)$.
+    </li>
+    <li>
+     Hypothetical reparametrization: $t=t(s)$.
+    </li>
+    <li>
+     Chain rule: $|\mathbf f'(t)| = |\mathbf f'(t)t'(s)| = |\mathbf f'(t)||t'(s)|$.
+    </li>
+    <li>
+     In order to ensure that the speed is constant, can try to solve the differential equation
+                $t'(s) = |\mathbf f'(t(s))|^{-1}.$
+    </li>
+   </ul>
+  </div>
+ </section>
+ <section>
+  <h2>
+   Practical arc length, II
+  </h2>
+  <div class="incremental">
+   <p>
+    Example: circle of radius $2$, parametrized by $\mathbf f(t)=\langle 2\cos(t), 2\sin(t)\rangle$
+   </p>
+   <p>
+    $$\mathbf f'(t) = \langle -2\sin(t), 2\cos(t)\rangle$$
+   </p>
+   <p>
+    $$|\mathbf f'(t)|=\sqrt{4\sin^2(t)+4\cos^2(t)}=2$$
+   </p>
+   <p>
+    So: solve $t'(s)=1/2$; one solution is $t=s/2$
+   </p>
+   <p>
+    End result: arc length parametrization of circle of radius $2$ is $\mathbf f(s)=\langle 2\cos(s/2),2\sin(s/2)\rangle$
+   </p>
+   <p class="slide question">
+    Find the arc length parametrization of the circle of radius $r$.
+   </p>
+  </div>
+ </section>
+</div>

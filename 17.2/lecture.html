@@ -1,0 +1,125 @@
+<div id="insertedcontent">
+ <section>
+  <h1>
+   Double integrals: first examples
+  </h1>
+ </section>
+ <section>
+  <h2>
+   The double integral appears
+  </h2>
+  <p class="slide">
+   In reasonable circumstances the approximations we get from Riemann sums improve as the mesh gets finer and finer.
+  </p>
+  <p class="slide">
+   Let's give this limit a name!
+  </p>
+  <p class="slide">
+   If $f(x,y)$ is continuous on the rectangle $R=[a,b]\times[c,d]$ then the
+   <span class="important">
+    double integral of $f$ over $R$
+   </span>
+   is the limit
+  </p>
+  <p class="slide">
+   $$\iint_R f(x,y)dx dy=\lim_{n\to\infty}\sum_{i=1}^n\sum_{j=1}^nf(x_{ij},y_{ij})\Delta(x)\Delta(y).$$
+  </p>
+  <p class="slide">
+   You will see a slightly different formulation in some books. Compare them and decide if they're the same! (He divides the two directions into different numbers of parts, etc., etc.)
+  </p>
+ </section>
+ <section>
+  <h2>
+   It computes volume
+  </h2>
+  <p class="slide">
+   As you can guess from our model, the double integral computes a volume.
+  </p>
+  <p class="slide">
+   <span class="important">
+    Theorem:
+   </span>
+   given a function $f(x,y)$ continuous and non-negative over a rectangle $R$ in $\mathbf R^2$, the volume of the solid between the $xy$-plane and the graph of $f$ over $R$ equals $\iint_Rfdxdy.$
+  </p>
+  <div class="slide">
+   <div style="float:left">
+    <div id="volumecontainer">
+    </div>
+   </div>
+   <p>
+    This baby has volume approximately $16.5895$. Sweet. (How did the computer get this?)
+   </p>
+  </div>
+ </section>
+ <section>
+  <h2>
+   How do you compute these?
+  </h2>
+  <p class="slide">
+   Can we do a single example?
+  </p>
+  <p class="slide">
+   Here's one: $f(x,y)=1$ over the rectangle $R=[-1,1]\times[-1,1].$ For the $n$th Riemann sum, $\Delta(x)=\frac{1-(-1)}{n}=\frac{2}{n}$ and similarly for $\Delta(y)$.
+  </p>
+  <p class="slide">
+   Computing the Riemann sums:
+  </p>
+  <p class="slide" style="font-size: 75%">
+   $$\begin{align*}
+        S_n=\sum_{i=1}^n\sum_{j=1}^n1\Delta(x)\Delta(y)=\left(\sum_{i=1}^n\Delta(x)\right)\left(\sum_{j=1}^n\Delta(y)\right)\\
+        &amp;=
+        \left(\sum_{i=1}^n\frac{2}{n}\right)\left(\sum_{j=1}^n\frac{2}{n}\right)\\
+        &amp;=2\cdot 2=4,
+        \end{align*}$$
+  </p>
+  <p class="slide">
+   so we get $\iint_R 1dxdy=4.$
+  </p>
+ </section>
+ <section>
+  <h2>
+   The piglet is excited
+  </h2>
+  <p class="slide">
+   The piglet of calculus has come knocking on your door at 2 AM. She is waving a notebook in the air. She calls you over and says:
+  </p>
+  <p class="slide">
+   "For any function $f(x,y)$ of the form $f(x,y)=g(x)h(y)$ and any rectangle $R=[a,b]\times[c,d]$, I
+   <span class="important">
+    know
+   </span>
+   that
+  </p>
+  <p class="slide">
+   $$\iint_Rf(x,y)dxdy=\left(\int_a^bg(x)dx\right)\cdot\left(\int_c^dh(y)dy\right)."$$
+  </p>
+  <p class="slide">
+   Is she right?
+  </p>
+  <p class="slide">
+   To warm up, you could try $f(x,y)=x$ and then $f(x,y)=xy.$
+  </p>
+  <p class="slide">
+   If you settle the piglet's question, you might try your hand at computing $\iint_{[0,1]\times[0,2]}(x+y) dxdy$; this does not fit into the piglet's pattern, of course!
+  </p>
+ </section>
+ <section>
+  <h2>
+   Germany + Italy = happy pig
+  </h2>
+  <p class="slide">
+   Go and learn about iterated integrals, an incredibly powerful method of computing these beasts.
+        We will use them together in other segments, but I will assume you know what they are.
+  </p>
+  <p class="slide">
+   <span class="important">
+    Observation:
+   </span>
+   we can try to split up the integral by dealing with the variables separately. If we choose the center points in each rectangle, we can write a Riemann sum and then start speculating wildly.
+  </p>
+  <p class="slide">
+   $$\begin{align*}&amp;\sum_{i=1}^n\sum_{i=1}^mf(x_{i},y_{j})\Delta(x)\Delta(y)=\sum_{i=1}^m\Delta(x)\sum_{j=1}f(x_i,y_j)\Delta(y)\\
+        &amp;\approx\sum_{i=1}^m\Delta(x)\int_{c}^d f(x_i,y)dy\approx\int_{a}^b\left(\int_{c}^df(x,y)dy\right)dx\end{align*}$$
+  </p>
+ </section>
+</div>

@@ -1,0 +1,81 @@
+<div id="insertedcontent">
+ <section>
+  <h1>
+   Area
+  </h1>
+ </section>
+ <section>
+  <h2>
+   An incredibly entertaining application of double integrals: area!
+  </h2>
+  <p class="slide">
+   We've been thinking about double integrals as computing volume.
+  </p>
+  <p class="slide">
+   They also compute area! Given a region $R$,
+  </p>
+  <p class="slide">
+   $$\iint_R1dA=\text{area}(R).$$
+  </p>
+  <p class="slide">
+   This can be
+   <span class="important">
+    useful
+   </span>
+   when we can find nice coordinates.
+  </p>
+ </section>
+ <section>
+  <h2>
+   Example
+  </h2>
+  <p class="slide">
+   Let's consider one of the marvelous polar shapes from before.
+  </p>
+  <p class="slide">
+   How about the area inside the curve $r=1+\sin(3\theta)$?
+  </p>
+  <p class="slide">
+   <img alt="There would be a flower here. Sigh." src="20.1/flower.png" style="width:400px;float:left;"/>
+  </p>
+  <p class="slide">
+   The integral becomes $$\int_0^{2\pi}\int_0^{1+\sin(3\theta)}rdrd\theta$$
+  </p>
+  <p class="slide">
+   Evaluate it, get $\frac{1}{2}\theta-\frac{1}{3}\cos(3\theta)+\frac{1}{24}(6\theta-\sin(6\theta))|_0^{2\pi}=\frac{3}{2}\pi$
+  </p>
+  <p class="slide important">
+   Be careful about how path is traversed!
+  </p>
+ </section>
+ <section>
+  <h2>
+   Do one!
+  </h2>
+  <p class="slide">
+   Consider the delightful logarithmic spiral:
+  </p>
+  <p class="slide">
+   $$r=e^{\theta/5}.$$
+  </p>
+  <ul>
+   <li class="slide">
+    What is the area of the first full turn of the spiral ($0\leq\theta\leq 2\pi$)?
+   </li>
+   <li class="slide">
+    What is the limit of the area inside the spiral $r=e^{\alpha\theta}$ as $\alpha$ tends to $0$?
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2>
+   One more, for extra fun
+  </h2>
+  <p>
+   Suppose there is a snail whose shell is built around the spiral like this: between each point of the spiral and the center there is a circle of shell material. Thus, the circle connecting the center to the point with polar coordinates $(\theta,e^{\theta/5})$ has radius $\frac{1}{2}e^{\theta/5}$ and is centered at the point with polar coordinates $(\theta,\frac{1}{2}e^{\theta/5})$. Write down an explicit integral that computes the volume of the shell.
+  </p>
+  <!--<p>Write $z$ as a function of $r$ and $\theta$: $z=\sqrt{e^{\theta/5}r-r^2}$ (why does that work?!?!).</p>-->
+  <div id="shellcontainer">
+  </div>
+ </section>
+</div>

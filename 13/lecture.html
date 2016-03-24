@@ -1,0 +1,238 @@
+<div id="insertedcontent">
+ <section>
+  <h1>
+   Multivariable functions
+  </h1>
+ </section>
+ <section>
+  <h2>
+   How to describe Mt. Rainier?
+  </h2>
+  <img alt="There's supposed to be a picture of a mountain here" src="14/Rainier.jpg"/>
+ </section>
+ <section>
+  <h2>
+   How to describe Mt. Rainier?
+  </h2>
+  <ul>
+   <li class="slide">
+    With poetry.
+   </li>
+   <li class="slide">
+    By height above the "ground".
+   </li>
+   <li class="slide">
+    By depth below a giant tarp hovering at constant altitude above the mountain.
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2>
+   "Assume a spherical cow...."
+  </h2>
+  <p class="slide">
+   Let's approximate and say that the mountain is shaped roughly like a paraboloid.
+            We can peek under the mountain a bit to see the shadow it casts:
+  </p>
+  <div class="slide" id="mountaincontainer">
+  </div>
+  <!--TODO: cast a shadow as motivation for domain and function-->
+ </section>
+ <section>
+  <h2>
+   Describe our toy mountain using numbers
+  </h2>
+  <p class="slide">
+   For each point in the shadow, record the height of the mountain over that point.
+  </p>
+  <p class="slide">
+   For our toy model, this function is $f(x,y)=9-x^2-y^2$
+  </p>
+  <p class="slide">
+   The general philosophy of functions still works.
+  </p>
+  <ul>
+   <li class="slide">
+    A function takes an
+    <span class="important">
+     input
+    </span>
+    and returns an
+    <span class="important">
+     output
+    </span>
+    .
+   </li>
+   <li class="slide">
+    There need not be a formula. The function could be defined on weird inputs.
+   </li>
+   <li class="slide">
+    For example: my desire for coffee (rated as "small","medium", "large") is a function of my fatigue ("mild", "moderate", "extreme") and my rough Husky card balance ("empty", "some", "lots"). Thus, d(mild,lots)=small and d(extreme,some)=large, but perhaps d(extreme,none)=moderate. Etc.
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2>
+   Our toy picture is a
+   <span class="important">
+    graph
+   </span>
+  </h2>
+  <p class="slide">
+   The shape you have recorded is the graph of a function of two variables!
+  </p>
+  <p class="slide">
+   In this toy model, the function is $f(x,y)=9-x^2-y^2$, so the graph is described by $z=9-x^2-y^2$.
+  </p>
+  <p class="slide question">
+   Take a whack at graphing these:
+  </p>
+  <ul>
+   <li class="slide">
+    $f(x,y)=\sin(x)$
+   </li>
+   <li class="slide">
+    $f(x,y)=\sin(x)\cos(y)$
+   </li>
+   <li class="slide">
+    $f(x,y)=\sqrt{1-x^2-y^2}$
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2>
+   Match the graph with the function
+  </h2>
+  <table style="margin-top: 100px">
+   <tr style="height: 150px; text-align: center">
+    <td>
+     $\sin(x)$
+    </td>
+    <td>
+     $\sin(x)\cos(y)$
+    </td>
+    <td>
+     $\sqrt{1-x^2-y^2}$
+    </td>
+   </tr>
+   <tr>
+    <td>
+     <img src="14/jiggly.jpg" style="width:260px;height:260px;display:inline">
+     </img>
+    </td>
+    <td>
+     <img src="14/siny.jpg" style="width:260px;height:260px;display:inline">
+     </img>
+    </td>
+    <td>
+     <img src="14/sphery.jpg" style="width:260px;height:260px;display:inline">
+     </img>
+    </td>
+   </tr>
+  </table>
+ </section>
+ <section>
+  <h2>
+   Enter the domain of the sheep*
+  </h2>
+  <p class="graphics">
+   *My college roommate studied Akkadian and found this written in Akkadian on a Pepsi can in 1999
+  </p>
+  <p class="slide">
+   Functions of two (or more!) variables have
+   <span class="important">
+    domains
+   </span>
+   just like functions of one variable.
+  </p>
+  <p class="slide">
+   Sometimes, the domain is a natural consequence of the shape of the function.
+  </p>
+  <p class="slide">
+   Usually, the domain is specified in advance.
+  </p>
+  <p class="slide question">
+   What are the natural domains of the following functions?
+  </p>
+  <ul>
+   <li class="slide">
+    $f(x,y)=9-x^2-y^2$
+   </li>
+   <li class="slide">
+    $f(x,y)=\sin(x)+\cos(|y|+\cos(x^{2012}))$
+   </li>
+   <li class="slide">
+    $f(x,y)=\ln(x+y)$
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2>
+   A mountaineer cannot lift mountains
+  </h2>
+  <p class="slide">
+   She needs to have a map, like this one, with
+   <span class="important">
+    level curves
+   </span>
+   .
+  </p>
+  <div class="slide">
+   <div id="isomountain" style="height:470px;width:470px;margin:30px auto 0px auto">
+   </div>
+  </div>
+ </section>
+ <section>
+  <h2>
+   The level curves are horizontal traces!
+  </h2>
+  <div id="slicedcontainer">
+  </div>
+ </section>
+ <section>
+  <h2>
+   Telling things apart
+  </h2>
+  <p class="question">
+   &raquo;Which of these contour maps corresponds to a circular cone?
+  </p>
+  <div style="margin:20 auto;width:650px;height:320px">
+   <div id="paraboloidcontour" style="height:300px;width:300px;float:left">
+   </div>
+   <div id="conecontour" style="height:300px;width:300px;float:right">
+   </div>
+  </div>
+  <p class="question slide">
+   &raquo;What is the function $f(x,y)$ whose graph in the region $0\leq z\leq 9$ is a circular cone with base radius $3$ and vertex at $(0,0,9)$?
+  </p>
+ </section>
+ <section>
+  <h2>
+   People really do this
+  </h2>
+  <p class="slide">
+   Here's a
+   <a href="http://www.nationalatlas.gov/100topos/Mt_Rainier.html" target="_blank">
+    link
+   </a>
+   to a map of Mt. Rainier from 1924 in the US national atlas.
+  </p>
+  <p class="slide question">
+   What does it mean when the level curves are bunched together?
+  </p>
+ </section>
+ <section>
+  <h2>
+   What about more variables?
+  </h2>
+  <p>
+   We can plot
+   <span class="important">
+    level surfaces
+   </span>
+   for functions of three variables (but it's rather hard to visualize). Here's an example with $f(x,y,z)=x^2+y^2+2z^2$.
+  </p>
+  <div id="cloudcontainer">
+  </div>
+ </section>
+</div>

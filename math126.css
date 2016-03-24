@@ -1,0 +1,56 @@
+/*THESE WIDTH AND HEIGHT SETTINGS ARE CLOSELY BOUND TO sizefixer.js*/
+.deck-container {
+	font-family: "Helvetica Neue", sans-serif;
+	/*width: 800px;
+	margin: auto;
+	padding: 0;
+	/*height: 600px;
+	/*  margin-top: auto;
+	 margin-bottom: auto;*/
+	/*  font-size: 16px;*/
+	background-color: white;
+	background: url(pig-fade.jpg) center no-repeat;
+	font-size: 150%;
+}
+html {
+	overflow: hidden;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+details {
+	display: none;
+}
+.starter {
+	margin-top: 20px;
+}
+p.graphics {
+	font-size: small;
+}
+.question, h3.question {
+	color: purple;
+}
+.important, h3.important {
+	color: red;
+}
+/*tweaks to deck.core.css to make lists less surprising; still needs some work*/
+.deck-current .slide, .deck-child-current .slide {
+	visibility: visible;
+	opacity: 0.1;
+}
+.deck-child-current .deck-after {
+	position: static;
+}
+.deck-child-current .deck-previous, .deck-child-current .deck-before, .deck-child-current .deck-current {
+	opacity: 1;
+}
+.slide div.livebuttonwrapper {
+	/*background-color: #ffbbbb;*/
+	background-color:red;
+}
+
+form.livebutton {
+	float:left;
+	padding: 5px;
+}

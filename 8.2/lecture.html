@@ -1,0 +1,123 @@
+<div id="insertedcontent">
+ <section class="slide">
+  <h1>
+   Vector derivatives in practice
+  </h1>
+ </section>
+ <section class="slide">
+  <h2>
+   Calculating the derivative in practice
+  </h2>
+  <p class="slide">
+   Given a vector function
+   <p class="slide">
+    $$\mathbf f(t)=\langle x(t),y(t),z(t)\rangle$$
+   </p>
+   <p class="slide">
+    the derivative is just
+   </p>
+   <p class="slide">
+    $$\mathbf f'(t)=\langle x'(t),y'(t),z'(t)\rangle,$$
+   </p>
+   <p class="slide">
+    the
+    <span class="important">
+     component-wise derivative
+    </span>
+    .
+   </p>
+   <p class="slide important">
+    The usual caveat applies: the derivative must exist for this to make sense! I.e., this formula works when all three derivatives exist, and when they don't neither does the derivative of $\mathbf f(t)$!
+   </p>
+  </p>
+ </section>
+ <section class="slide">
+  <h2 class="question">
+   Practice
+  </h2>
+  <div class="slide">
+   <p>
+    Given the formula
+   </p>
+   <p>
+    $$\mathbf f(t)=\langle \cos(t)(2-\cos(4t)),\sin(t)(2-\cos(4t)),\sin(4t)\rangle$$
+   </p>
+   <p>
+    for the motion of the electron on the torus,
+   </p>
+  </div>
+  <ul>
+   <li class="slide question">
+    calculate the velocity of the electron as a function of $t$
+   </li>
+   <li class="slide question">
+    How does the speed vary over time?
+   </li>
+   <li class="slide">
+    (What is the
+    <q>
+     speed
+    </q>
+    , anyway? The magnitude of the velocity vector? That sounds right....)
+   </li>
+  </ul>
+ </section>
+ <section class="slide">
+  <h2 class="question">
+   Help the Piglet
+  </h2>
+  <p class="slide">
+   The piglet of calculus tried the question on the previous slide and got the following answer:
+  </p>
+  <p class="slide">
+   The derivative of $\mathbf f(t)=\langle \cos(t)(2-\cos(4t)),\sin(t)(2-\cos(4t)),\sin(4t)\rangle$ is:
+  </p>
+  <p class="slide important">
+   $$\frac{d\mathbf f}{dt}=\langle -\sin(t)(2-\cos(4t))+4\cos(t)\sin(4t),
+            4\cos(t)\sin(4t),\sin(4t)\rangle$$
+  </p>
+  <p class="slide">
+   Every time the piglet enters the answer in webassign, it is marked wrong. What mistakes did the piglet make?
+  </p>
+ </section>
+ <section class="slide">
+  <h2>
+   The piglet
+  </h2>
+  <ul>
+   <li class="slide">
+    <span class="important">
+     Forgot to differentiate the third component!
+    </span>
+   </li>
+   <ul>
+    <li class="slide">
+     Wrong: $\sin(4t)$
+    </li>
+    <li class="slide">
+     Right: $4\cos(4t)$
+    </li>
+   </ul>
+   <li class="slide">
+    <span class="important">
+     Used the product rule incorrectly in the second component (by just taking the product of
+                the derivatives)!
+    </span>
+   </li>
+   <ul>
+    <li class="slide">
+     Wrong: $4\cos(t)\sin(4t)$
+    </li>
+    <li class="slide">
+     Right: $\cos(t)(2-\cos(4t))+4\sin(t)\sin(4t)$
+    </li>
+   </ul>
+   <li class="slide">
+    Anything else?
+   </li>
+   <li class="slide question">
+    Have you ever made mistakes like these?
+   </li>
+  </ul>
+ </section>
+</div>

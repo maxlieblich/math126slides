@@ -1,0 +1,169 @@
+<div id="insertedcontent">
+ <section>
+  <h1>
+   Lines and planes: doing it
+  </h1>
+ </section>
+ <section>
+  <h2>
+   Planes described using vectors
+  </h2>
+  <p>
+   If $\mathbf u=\langle\alpha, \beta,\gamma\rangle$ is perpendicular to plane $P$ and $u=(a,b,c)$ is a point of $P$,
+            we can describe $P$ like this:
+  </p>
+  <p class="slide">
+   $$P=\{(x,y,z):\langle x-a, y-b, z-c\rangle\cdot\mathbf u=0\}$$
+  </p>
+  <ul class="incremental">
+   <li>
+    Get a linear equation: $\alpha(x-a)+\beta(y-b)+\gamma(z-c)=0$
+   </li>
+   <li>
+    Any linear equation gives a plane.
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2>
+   Planes described using vectors
+  </h2>
+  <p>
+   Describe the plane $x-3y+47z-28=0$ using vectors.
+  </p>
+  <ul class="incremental">
+   <li>
+    Normal vector: $\langle 1,-3,47\rangle$. How did I know?
+   </li>
+   <li>
+    Trick: always just use the coefficients of $x$, $y$, and $z$
+    <li>
+     To translate: find
+     <span class="important">
+      one
+     </span>
+     solution by eyeballs. A solution: $(-16,1,1)$.
+    </li>
+    <li>
+     So the plane is the set of endpoints of vectors $\mathbf v$ such that
+    </li>
+    <p>
+     $$(\mathbf v-\langle-16,1,1\rangle)\cdot\langle 1,-3,47\rangle=0.$$
+    </p>
+   </li>
+   <li>
+    Another way to say it: it is what you get when you take the set of vectors
+                perpendicular to $\langle 1, -3, 47\rangle$ and translate them all by $\langle -16, 1, 1\rangle$
+                (and then just keep the set of endpoints)
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2>
+   Practice
+  </h2>
+  <p>
+   Describe the plane $3x-4y-5z=6$ using vectors.
+  </p>
+ </section>
+ <section>
+  <h2>
+   Who cares?
+  </h2>
+  <ul class="incremental">
+   <li>
+    Using this approach, you can
+    <span class="important">
+     prove
+    </span>
+    that any plane is the set of solutions of a linear equation in $x,y,z$ (see book!).
+   </li>
+   <li>
+    This gives us a way to get a grip on the intersection of
+    <span class="important">
+     two
+    </span>
+    planes.
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2>
+   Example
+  </h2>
+  <ul class="incremental">
+   <li>
+    Describe the intersection of the planes $x-2y-z=0$ and $2x-y+z=6$.
+   </li>
+   <li>
+    Perpendicular vectors: $\langle 1,-2,-1\rangle$ and $\langle 2,-1,1\rangle$
+   </li>
+   <li>
+    Common solution: $(2,0,2)$
+   </li>
+   <li>
+    Thus, the line of intersection is the set of vectors $\mathbf v$ such that
+    <p>
+     $$(\mathbf v-\langle 2,0,2\rangle)\cdot\langle 1,-2,-1\rangle=0$$
+    </p>
+    <p>
+     and
+    </p>
+    <p>
+     $$(\mathbf v-\langle 2,0,2\rangle)\cdot\langle 2,-1,1\rangle=0.$$
+    </p>
+   </li>
+   <li class="important">
+    The vector $\mathbf v-\langle 2,0,2\rangle$ is perpendicular to both: cross product!
+   </li>
+   <li>
+    The line is just the endpoints of vectors of the form
+    <p>
+     $$\langle 2,0,2\rangle+t\langle 1,-2,-1\rangle\times\langle 2,-1,1\rangle,$$
+    </p>
+    where $t$ ranges over all scalars.
+    <span class="important slide">
+     Parametric equations!
+    </span>
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2>
+   Last step: expand cross product
+  </h2>
+  <p>
+   To describe $\langle 2,0,2\rangle+t\langle 1,-2,-1\rangle\times\langle 2,-1,1\rangle$, let's expand:
+  </p>
+  <ul class="incremental">
+   <li>
+    $\langle 1,-2,-1\rangle\times\langle 2,-1,1\rangle=\langle -3,-3,3\rangle$
+   </li>
+   <li>
+    So the line is given by the endpoints of the vectors $\{\langle 2,0,2\rangle+t\langle -3,-3,3\rangle\}$
+   </li>
+   <li>
+    Parametric form: $(x,y,z)=(2-3t,-3t,2+3t)$
+   </li>
+   <li>
+    As $t$ varies, this traces out the line of intersection.
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2>
+   More practice
+  </h2>
+  <ul>
+   <li>
+    Describe the intersection of $3x+4y+5z=6$ and $y+z=0$.
+   </li>
+   <li>
+    Describe the intersection of $3x+4y+5z=6$ and $6x+8y+10y=12$.
+   </li>
+   <li>
+    Describe the intersection of $3x+4y+5z=6$ and $9x+12y+15z=17$.
+   </li>
+  </ul>
+ </section>
+</div>

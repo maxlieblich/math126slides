@@ -1,0 +1,216 @@
+<div id="insertedcontent">
+ <section>
+  <h1>
+   Lines and planes: introduction
+  </h1>
+ </section>
+ <section>
+  <h2>
+   Warm up
+  </h2>
+  <p>
+   <b class="question">
+    Question:
+   </b>
+   how can we describe the line of intersection of two planes?
+  </p>
+  <div id="twoplanescontainer">
+  </div>
+ </section>
+ <section>
+  <h2>
+   Warm up
+  </h2>
+  <p>
+   <b class="question">
+    Simpler:
+   </b>
+   what is the intersection of the planes $x=0$ and $y=0$
+  </p>
+  <div id="coordplanes">
+  </div>
+ </section>
+ <section>
+  <h2>
+   The enemy of my enemy...
+  </h2>
+  <ul class="incremental">
+   <li>
+    What is a plane?
+   </li>
+   <li>
+    The plane is perpendicular to the line that is perpendicular to it (?!?!!?!)
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2>
+   The enemy of my enemy...
+  </h2>
+  <ul>
+   <li>
+    What is a plane?
+   </li>
+   <li>
+    The plane is perpendicular to the line that is perpendicular to it (?!?!!?!)
+   </li>
+  </ul>
+  <div id="enemycontainer">
+  </div>
+ </section>
+ <section>
+  <h2>
+   Quick review
+  </h2>
+  <p>
+   How can you tell if two vectors $\mathbf a$ and $\mathbf b$ are perpendicular?
+  </p>
+ </section>
+ <section>
+  <h2>
+   Quick review
+  </h2>
+  <p>
+   How can you tell if two vectors $\mathbf a$ and $\mathbf b$ are perpendicular?
+  </p>
+  <p>
+   So how do you write the equation describing "the set of all endpoints of vectors $\mathbf b$ that are
+            perpendicular to a fixed vector $\mathbf a$"?
+  </p>
+ </section>
+ <section>
+  <h2>
+   Quick review
+  </h2>
+  <p>
+   How can you tell if two vectors $\mathbf a$ and $\mathbf b$ are perpendicular?
+  </p>
+  <p>
+   So how do you write the equation describing "the set of all endpoints of vectors $\mathbf b$ that are
+            perpendicular to a fixed vector $\mathbf a$"?
+  </p>
+  <p>
+   Don't look at the next slide if you don't want to see the answer!
+  </p>
+ </section>
+ <section>
+  <h2>
+   Quick review
+  </h2>
+  <p>
+   How can you tell if two vectors $\mathbf a$ and $\mathbf b$ are perpendicular?
+  </p>
+  <p>
+   So how do you write the equation describing "the set of all endpoints of vectors $\mathbf b$ that are
+            perpendicular to a fixed vector $\mathbf a$"?
+  </p>
+  <p>
+   If $\mathbf a=\langle \alpha,\beta,\gamma\rangle$ then the equation is
+  </p>
+  <p>
+   $$\alpha x+\beta y+\gamma z = 0.$$
+  </p>
+ </section>
+ <section>
+  <h2>
+   Quick review
+  </h2>
+  <p>
+   How can you tell if two vectors $\mathbf a$ and $\mathbf b$ are perpendicular?
+  </p>
+  <p>
+   So how do you write the equation describing "the set of all endpoints of vectors $\mathbf b$ that are
+            perpendicular to a fixed vector $\mathbf a$"?
+  </p>
+  <p>
+   If $\mathbf a=\langle \alpha,\beta,\gamma\rangle$ then the equation is
+  </p>
+  <p>
+   $$\alpha x+\beta y+\gamma z = 0.$$
+  </p>
+  <p>
+   Example: if $\mathbf a=\langle 1, 2, -1\rangle$, you get $x+2y-z=0$.
+  </p>
+ </section>
+ <section>
+  <h2>
+   Quick review
+  </h2>
+  <p>
+   How can you tell if two vectors $\mathbf a$ and $\mathbf b$ are perpendicular?
+  </p>
+  <p>
+   So how do you write the equation describing "the set of all endpoints of vectors $\mathbf b$ that are
+            perpendicular to a fixed vector $\mathbf a$"?
+  </p>
+  <p>
+   If $\mathbf a=\langle \alpha,\beta,\gamma\rangle$ then the equation is
+  </p>
+  <p>
+   $$\alpha x+\beta y+\gamma z = 0.$$
+  </p>
+  <p>
+   Example: if $\mathbf a=\langle 1, 2, -1\rangle$, you get $x+2y-z=0$.
+  </p>
+  <p>
+   What shape is that?
+  </p>
+ </section>
+ <section>
+  <h2>
+   Piglet of calculus conjectures
+  </h2>
+  <div class="incremental">
+   <p>
+    Any plane is just the set of endpoints of vectors perpendicular to a fixed one!
+                So just fix a vector $\mathbf u$ and let
+   </p>
+   <p>
+    $$P_{\mathbf u}=\{\mathbf v\textrm{ such that }\mathbf v\cdot\mathbf u=0\}.$$
+   </p>
+   <p>
+    For example, the $xy$-plane is the set of endpoints of vectors perpendicular to $\langle 0,0,1\rangle$
+   </p>
+   <p>
+    Does it work? Can the piglet of calculus go to sleep now?
+   </p>
+  </div>
+ </section>
+ <section>
+  <h2>
+   Conundrum: translation
+  </h2>
+  <ul class="incremental">
+   <li>
+    This is OK if the plane can be anchored like vectors can at $(0,0,0)$.
+   </li>
+   <li>
+    If not, we have to take what we just did and
+    <span class="important">
+     translate
+    </span>
+    it in space (i.e., move it away from $(0,0,0)$).
+   </li>
+   <li>
+    This is just like making the plane $z=4$ by translating the $xy$-plane up $4$ units: the plane $z=4$ is
+    <b>
+     not
+    </b>
+    the set of
+    <b>
+     endpoints
+    </b>
+    of vectors perpendicular to $\mathbf k$, just a
+                parallel
+    <b>
+     translation
+    </b>
+    of it.
+   </li>
+  </ul>
+  <div class="slide">
+   <div id="parplanescontainer">
+   </div>
+  </div>
+ </section>
+</div>

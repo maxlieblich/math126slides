@@ -1,0 +1,111 @@
+<div id="insertedcontent">
+    <section>
+        <h1>Making new Taylor series from old</h1>
+    </section>
+
+    <section>
+        <h2>Warm up brain</h2>
+        <p class="slide">Here's a problem to try, to get your brain in the slippery place that lets us manipulate these
+            series: find the Taylor expansion of $\frac{1}{2-x}$ on the interval $[0,2]$.</p>
+        <p class="slide">
+            <span class="important">Hint:</span> let $y=\frac{1}{2}x$, so that the function becomes
+            $\frac{1}{2-2y}=\frac{1}{2}\frac{1}{1-y}$. Leverage what you know?</p>
+    </section>
+    <section>
+        <h2>Operations with Taylor series</h2>
+        <ul>
+            <li class="incremental"><strong>Addition</strong>
+                <ul class="incremental">
+                    <li>Given</li>
+                    <li>$f(x)=\sum a_n x^n$</li>
+                    <li>$g(x)=\sum b_n x^n$</li>
+                    <li>Assuming both converge on $[0,c]$</li>
+                    <li>Get: $f(x)+g(x)=\sum(a_n+b_n)x^n$ on the same interval</li>
+                    <li>Add like polynomials</li>
+                </ul>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Operations with Taylor series</h2>
+        <ul>
+            <li class="incremental"><strong>Multiplication</strong>
+                <ul class="incremental">
+                    <li>Given</li>
+                    <li>$f(x)=\sum a_n x^n$</li>
+                    <li>$g(x)=\sum b_n x^n$</li>
+                    <li>Assuming both converge on $[0,c]$</li>
+                    <li>Get: $f(x)g(x)=\sum_{n=0}^\infty(\sum_{p+q=n}a_pb_q)x^n$ on the same interval</li>
+                    <li>Multiply like polynomials</li>
+                </ul>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Operations with Taylor series</h2>
+        <ul>
+            <li class="incremental"><strong>Differentiation</strong>
+                <ul class="incremental">
+                    <li>Given</li>
+                    <li>$f(x)=\sum a_n x^n$</li>
+                    <li>Assuming the series converges on $[0,c]$</li>
+                    <li>Get: $f'(x)=\sum_{n=1}^\infty na_nx^{n-1}$ on the <strong>open</strong> interval $(0,c)$</li>
+                    <li>Differentiate like polynomials</li>
+                </ul>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Operations with Taylor series</h2>
+        <ul>
+            <li class="incremental"><strong>Antidifferentiation</strong>
+                <ul class="incremental">
+                    <li>Given</li>
+                    <li>$f(x)=\sum a_n x^n$</li>
+                    <li>Assuming the series converges on $[0,c]$</li>
+                    <li>Get: $\int f dx = \sum_{n=0}^\infty \frac{a_n}{n+1}x^{n+1}$ on the same interval</li>
+                    <li>Integrate like polynomials</li>
+                </ul>
+        </ul>
+        <p class="slide">Let's take a couple of these babies out for a spin.</p>
+    </section>
+
+
+    <section>
+        <h2>Addition</h2>
+        <p class="slide">Find the Taylor series for the function </p>
+        <p class="slide">$$f(x)=\frac{1}{x^2-3x+2}$$</p>
+        <p class="slide">on the interval $[0,1]$.
+            <span class="slide question">Thoughts?</span></p>
+        <p class="slide">Partial fractions:</p>
+        <p class="slide">$$\frac{1}{x^2-3x+1}=\frac{1}{(2-x)(1-x)}=\frac{1}{1-x}-\frac{1}{2-x}.$$</p>
+        <p class="slide">Independent Taylor expansions: $\frac{1}{2-x}=\sum\frac{1}{2^{n+1}}x^n$; $\frac{1}{1-x}=\sum x^n$.</p>
+        <p class="slide">Assemble: $f(x)=\sum x^n-\sum\frac{1}{2^{n+1}}x^n=\sum (1-\frac{1}{2^{n+1}})x^n=\sum \frac{2^{n+1}-1}{2^{n+1}}x^n$.</p>
+    </section>
+    <section>
+        <h2>Do one!</h2>
+        <p class="slide">Compute the Taylor series of $\sin(x)+\cos(x)$ near $x=0$.</p>
+    </section>
+    <section>
+        <h2>Integration</h2>
+        <p class="slide">Remember how integration is hard? If we have Taylor series at our disposal, we can often give some sort of expression for the integral of a function.</p>
+        <p class="slide"><span class="important">Example:</span> calculate $\int_0^t\sin(x^2)dx$.</p>
+        <p class="slide">Well, $$\sin(y)=\sum_{n=0}^\infty\frac{(-1)^n}{(2n+1)!}y^{2n+1},$$ so
+            $$\sin(x^2)=\sum_{n=0}^\infty\frac{(-1)^n}{(2n+1)!}x^{4n+2}$$ (substitute $x^2$ for $y$).</p>
+            <p class="slide">This converges <span class="important">everywhere</span>.</p>
+    </section>
+    <section>
+        <h2>Integration</h2>
+        <p>Thus, $$\begin{align*}\int_0^t\sin(x^2)dx&=\int_0^t\sum_{n=0}^\infty\frac{(-1)^n}{(2n+1)!}x^{4n+2}dx\\ &=\sum_{n=0}^\infty\frac{(-1)^n}{(4n+3)(2n+1)!}x^{4n+3}\Bigr|_0^t\\ &=\sum_{n=0}^\infty\frac{(-1)^n}{(4n+3)(2n+1)!}t^{4n+3}.\end{align*}$$</p>
+        <p class="slide">This may (does!) look inscrutable, but the point is that it is a <span class="important">formula</span> that we could use to <span class="important">compute</span> that integral if we had to.</p>
+    </section>
+    <section>
+        <h2>Try one!</h2>
+        <p class="slide">Find an infinite series expansion for the integral $\int_1^te^{-x^4}dx$. For which $t$ does it converge?</p>
+    </section>
+    <section>
+        <h2></h2>
+        <a href="http://www.mathjax.org/"> <img title="Powered by MathJax"
+                                                src="http://www.mathjax.org/badge.gif" border="0" alt="Powered by MathJax"/> </a><a href="http://www.w3.org/html/logo/"> <img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-graphics-multimedia-semantics.png" width="229" height="64" alt="HTML5 Powered with CSS3 / Styling, Graphics, 3D &amp; Effects, Multimedia, and Semantics" title="HTML5 Powered with CSS3 / Styling, Graphics, 3D &amp; Effects, Multimedia, and Semantics"> </a>
+    </section>
+</div>

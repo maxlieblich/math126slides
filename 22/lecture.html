@@ -1,0 +1,154 @@
+<div id="insertedcontent">
+    <section>
+        <h1>Higher order approximation</h1>
+    </section>
+
+    <section>
+        <h2>Nedwina and the piglet keep playing the market</h2>
+        <p class="slide">
+            It's still 1999, still before the bursting of the tech stock bubble, and Nedwina and the piglet of calculus have stock market fever.
+        </p>
+        <p class="slide">
+            (This is still not a good sign.)
+        </p>
+        <p class="slide">
+            Nedwina and the piglet realize that they need to do better than a linear approximation if they want to outsmart the Slimy Stock Snail. Recall that the best linear approximation is:
+        </p>
+        <p class="slide">
+            $$f(t)=10000+3000t,$$
+        </p>
+        <p class="slide">
+            where $t$ is the time in days from now. In addition, by analyzing the data, Nedwina and the piglet conclude that the best linear approximation to the first derivative of $f$ is
+        </p>
+        <p class="slide">
+            $$g(t)=3000-10t.$$
+        </p>
+    </section>
+    <section>
+        <h2>Is it ever enough?</h2>
+        <p class="slide question">
+            Using their New and Improved Better Tasting Stock Toothpick (&copy; 1999), how far off can N and the P be in six months? What additional information would help? Do they have enough juice?
+        </p>
+        <p class="slide">
+            What kinds of additional information could N and the P use to evaluate the accuracy of the new approximation?
+        </p>
+        <p class="slide">
+            Will it ever be enough?
+        </p>
+    </section>
+    <section>
+        <h2>Quadratic approximation</h2>
+        <p class="slide">What kind of quadratic approximation do we get from our two pieces?</p>
+        <p class="slide">If $D(t)$ is the value of the DJIA, then $f(t)=10000+3000t$ approximates $D(t)$ and $g(t)=3000-10t$ approximates $D'(t)$.</p>
+        <p class="slide">Integrating $g(t)$ and accounting for the initial value (which we can compute as $f(0)$), we get an approximation function</p>
+        <p class="slide">$$h(t)=10000+3000t-5t^2.$$</p>
+        <p class="slide important">This is the best quadratic approximation to our function.</p>
+        <p class="slide">General formula: the best quadratic approximation to $f(t)$ around the point $t=b$ is given by $$T_2(x)=f(b)+f'(b)(x-b)+\frac{1}{2}f''(b)(x-b)^2.$$</p>
+    </section>
+    <section>
+        <h2>Examples</h2>
+        <p class="slide">
+            Let's continue with the some examples from last time. Here are a bunch of functions with their quadratic approximations around $t=0$:
+        </p>
+        <p class="slide"> 
+            Quadratic approx near $0$: $T_2(x) = f(0) + f'(0)x + \frac{1}{2}f''(0)x^2$
+        </p>
+        <ul class="incremental">
+            <li>
+                $f(t)=t^2$, best quadratic approximation near $0$: $T_2(t)=t^2$
+            </li>
+            <li>
+                $f(t)=t^3$, best quadratic approximation near $0$: $T_2(t)=0$ (!!)
+            </li>
+            <li>
+                $f(t)=\sin(t)$, best quadratic approximation near $0$: $T_2(t)=t$ (!?!)
+            </li>
+            <li>
+                $f(t)=t^{367}$, best quadratic approximation near $0$: $T_2(t)=0$.
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h2>Do some!</h2>
+        <p>Find the best quadratic approximations $f(b)+f'(b)(x-b)+\frac{1}{2}f''(b)(x-b)^2$ to the following functions around the points indicated:</p>
+        <ul>
+            <li>$f(x)=x^3$ around $b=1$</li>
+            <li>$f(x)=\sin(x)$ around $b=\pi/2$</li>
+            <li>$f(x)=e^{-x^2}$ around $b=0$</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Error</h2>
+        <p class="slide">We can estimate error just like we did last time.</p>
+        <p class="slide">The key: the <em>third</em> derivative! (Surprised?)</p>
+        <p class="slide"><span class="important">Theorem:</span> If $|f'''(t)|\leq M$ for all $t$ between $b$ and $c$ then </p>
+        <p class="slide">$$|f(c)-T_2(c)|\leq\frac{M}{6}|c-b|^3.$$</p>
+        <p class="slide">In our example: $T_2(c)=10000+3000c-5c^2.$</p>
+        <p class="slide">If $|D'''(t)|\leq M$ during the next half year, then we see that </p>
+        <p class="slide">$$|T_2(c) - D(c)|\leq 1004762 M$$</p>
+    </section>
+    <section>
+        <h2>Mind: blown</h2>
+        <p class="slide">Why stop at quadratic approximations?</p>
+        <p class="slide">We can approximate to higher and higher order!</p>
+        <p class="slide">Let's fix a function $f(x)$ that is "infinitely differentiable" (every derivative has a derivative).</p>
+        <ul>
+            <li class="slide">Linear approx near $b$: $T_1(x)=f(b)+f'(b)(x-b)$</li>
+            <li class="slide">Quadratic approx near $b$: $T_2(x)=f(b)+f'(b)(x-b)+\frac{1}{2}f''(b)(x-b)^2$</li>
+            <li class="slide">Cubic approx near $b$: <span style="font-size:80%">$T_3(x)=f(b)+f'(b)(x-b)+\frac{1}{2}f''(b)(x-b)^2+\frac{1}{6}f'''(b)(x-b)^3$</span>.</li>
+            <li class="slide">General: <span style="font-size:80%">$T_n(x)=f(b)+f'(b)(x-b)+\frac{1}{2}f^{(2)}(b)(x-b)^2+\cdots+\frac{1}{n!}f^{(n)}(b)(x-b)^n$</span>.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Say what?</h2>
+        <p class="slide">Maybe we should refresh our memories about the notation.</p>
+        <ul>
+            <li class="slide">$f^{(n)}(b)$ is the $n$th derivative of $f$ at $b$ (so $f=f^{(0)}$, $f'=f^{(1)}$, $f''=f^{(2)}$, etc.)</li>
+            <li class="slide">$n!=n\cdot(n-1)\cdot(n-2)\cdot\cdots\cdot 2\cdot 1$, pronounced "$n$ factorial", is the product of the integers from $1$ to $n$ (so $1!=1$, $2!=2$, $3!=6$, $4!=24$,etc.), and by definition $0!=1$.</li>
+        </ul>
+        <p class="slide">The formula again: the <span class="important">$n$th Taylor polynomial</span> of $f(x)$ around $b$ is</p>
+        <p class="slide" style="font-size:75%">$$\begin{align*}T_n(x)&=f(b)+f^{(1)}(b)(x-b)+\frac{1}{2}f^{(2)}(b)(x-b)^2+\cdots+\frac{1}{n!}f^{(n)}(b)(x-b)^n\\&
+            =\sum_{i=0}^n\frac{1}{i!}f^{(i)}(b)(x-b)^i\end{align*}$$</p>
+    </section>
+    <section>
+        <h2>Example</h2>
+        <p class="slide">Let's wrap the piglet's head around an example: $f(x)=\sin(x)$.</p>
+        <ul>
+            <li class="slide">Linear approximation at $b=0$: $T_1(x)=x$</li>
+            <li class="slide">Quadratic approx at $b=0$: $T_2(x)=x$</li>
+            <li class="slide">Cubic: $T_3(x)=x-\frac{1}{6}x^3$</li>
+            <li class="slide">Quartic: $T_4=x-\frac{1}{6}x^3$</li>
+            <li class="slide">Quintic: $T_5=x-\frac{1}{6}x^3+\frac{1}{5!}x^5$</li>
+            <li class="slide">Septic: $T_7=x-\frac{1}{6}x^3+\frac{1}{5!}x^5-\frac{1}{7!}x^7$</li>
+            <li class="slide">General, for $n=2m+1$ odd: $T_n=\sum_{i=0}^m\frac{(-1)^{i}}{(2i+1)!}x^{2i+1}$ (don't worry!)</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Photographic evidence</h2>
+        <p>
+            Here's a graph showing the approximations of odd degree up to $9$ between $t=0$ and $t=2\pi$
+        </p>
+        <div id="graphcontainer" style="height:400px;width:600px;float:left;margin-right:10px"></div>
+        <p class="slide">
+            Approximations of different orders get bad in different ways: end up too high or too low. Is there a pattern?
+        </p>
+        <p class="slide">
+            Anything else to observe?
+        </p>
+    </section>
+    <section>
+        <h2>Try some!</h2>
+        <p class="slide">Find formulas for $T_n$ as a sum (with $\sum$, some limits, etc.) for the following functions:</p>
+        <ul>
+            <li class="slide">$f(x)=\cos(x)$ near $b=\pi$</li>
+            <li class="slide">$f(x)=e^x$ near $b=0$</li>
+            <li class="slide"><span class="important">Challenge:</span> $$f(x)=\begin{cases} e^{-1/x^2} &\mbox{if } x\neq 0\\ 0&\mbox{if } x=0
+                \end{cases}$$ near $b=0$.</li>
+        </ul>
+    </section>
+    <section>
+        <h2></h2>
+        <a href="http://www.mathjax.org/"> <img title="Powered by MathJax"
+                                                src="http://www.mathjax.org/badge.gif" border="0" alt="Powered by MathJax"/> </a><a href="http://www.w3.org/html/logo/"> <img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-graphics-multimedia-semantics.png" width="229" height="64" alt="HTML5 Powered with CSS3 / Styling, Graphics, 3D &amp; Effects, Multimedia, and Semantics" title="HTML5 Powered with CSS3 / Styling, Graphics, 3D &amp; Effects, Multimedia, and Semantics"> </a>
+    </section>
+</div>

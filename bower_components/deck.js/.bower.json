@@ -1,0 +1,14 @@
+{
+  "name": "deck.js",
+  "homepage": "https://github.com/imakewebthings/deck.js",
+  "_release": "4601d4da2b",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "4601d4da2bf8c803c9ca55c9d616b568314d3cfa"
+  },
+  "_source": "git://github.com/imakewebthings/deck.js.git",
+  "_target": "*",
+  "_originalSource": "deck.js",
+  "_direct": true
+}

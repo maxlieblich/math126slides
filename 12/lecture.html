@@ -1,0 +1,273 @@
+<div id="insertedcontent">
+ <section>
+  <h1>
+   Tangential and normal acceleration
+  </h1>
+ </section>
+ <section>
+  <h2>
+   Question
+  </h2>
+  <h3 class="question">
+   The electron again
+  </h3>
+  <p>
+   The electron is joined by a tiny rubber blob of length and width each equal to $0.1$. Usual motion:
+  </p>
+  <p>
+   $$\mathbf f(t)=\langle \cos(t)(2-\cos(4t)),\sin(t)(2-\cos(4t)),\sin(4t)\rangle$$
+  </p>
+  <p class="slide">
+   Headwind (resp. tiny monkey) causes rubber blob to change length (resp. width) in proportion to the acceleration $a$
+   <span class="important">
+    along the path
+   </span>
+   (resp. the acceleration $b$
+   <span class="important">
+    normal to the path
+   </span>
+   ).
+  </p>
+  <p class="slide">
+   $$\Delta(\textrm{length})=-0.01a\qquad \Delta(\textrm{width})=0.01b$$
+  </p>
+  <ul>
+   <li class="slide">
+    What are the length and width of the rubber blob at time $t$?
+   </li>
+   <li class="slide">
+    More basic question: how can we describe the acceleration along the path or perpendicular to the path? What does it mean?
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2>
+   Examples
+  </h2>
+  <h3>
+   What is acceleration along and perpendicular to these paths?
+  </h3>
+  <ul>
+   <li class="slide">
+    $(t^{45},0,0)$
+   </li>
+   <li class="slide">
+    $(t^2-1,t^3-t,0)$
+   </li>
+   <li class="slide">
+    $(\cos(t),\sin(t),t)$
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2>
+   Examples
+  </h2>
+  <h3>
+   First: $(t^{45},0,0), -1\leq t\leq 1$ loop
+  </h3>
+  <div id="stringcontrols" style="float:right; font-size:small">
+  </div>
+  <div id="stringcontainer">
+  </div>
+ </section>
+ <section>
+  <h2>
+   Examples
+  </h2>
+  <h3>
+   First: $(t^{45},0,0)$
+  </h3>
+  <p class="slide">
+   Motion on a string!
+  </p>
+  <p class="slide">
+   The acceleration in the direction of motion is just the vector $\langle 1980 t^{43},0,0\rangle$. It always points in the direction of the motion (including negative scalars, so could point in opposite direction).
+  </p>
+  <p class="slide">
+   How is the sign change at $t=0$ reflected in the motion?
+  </p>
+ </section>
+ <section>
+  <h2>
+   Examples
+  </h2>
+  <h3>
+   Second: $(t^2-1,t(t^2-1),0), -2\leq t\leq 2$ loop
+  </h3>
+  <div style="float:right">
+   <div id="cubiccontrols" style="font-size:small">
+   </div>
+   <div id="vectornames" style="margin-top: 50px">
+    <p style="color: #ff0000">
+     acceleration
+    </p>
+    <p style="color: #00ff00">
+     tangential component
+    </p>
+    <p style="color: #ff00ff">
+     normal component
+    </p>
+   </div>
+  </div>
+  <div id="cubiccontainer">
+  </div>
+ </section>
+ <section>
+  <h2>
+   Examples
+  </h2>
+  <h3>
+   Second: $(t^2-1,t(t^2-1),0)$, observations
+  </h3>
+  <ul>
+   <li class="slide">
+    What we call "turning" looks like increased magnitude of normal component of acceleration.
+   </li>
+   <li class="slide">
+    Tangential component of acceleration can be very negative for a while before things slow down!
+   </li>
+   <li class="slide">
+    What else?
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2>
+   Examples
+  </h2>
+  <h3>
+   Second: $(t^2-1,t(t^2-1),0)$
+  </h3>
+  <p>
+   <span class="important">
+    To calculate:
+   </span>
+   find the unit tangent and normal vectors, then calculate components of acceleration.
+  </p>
+  <ul>
+   <li class="slide">
+    Unit tangent: $\mathbf T(t)=\frac{1}{\sqrt{9t^4-2t^2+1}}\langle 2t,3t^2-1,0\rangle$
+   </li>
+   <li class="slide">
+    Unit normal: $\mathbf N(t)=\frac{1}{\sqrt{9t^4-2t^2+1}}\langle 1-3t^2,2t,0\rangle$
+   </li>
+   <!--TODO: CHECK SIGN-->
+   <li class="slide">
+    Acceleration: $\mathbf a(t)=\langle 2,6t,0\rangle$
+   </li>
+   <li class="slide">
+    The components of $\mathbf a(t)$ in the directions of $\mathbf T(t)$ and $\mathbf N(t)$:
+    <ul>
+     <li class="slide">
+      $(\mathbf a(t)\cdot\mathbf T(t))\mathbf T(t)=\frac{18t^3-2t}{9t^4-2t^2+1}\langle 2t,3t^2-1,0\rangle$
+     </li>
+     <li class="slide">
+      $(\mathbf a(t)\cdot\mathbf N(t))\mathbf N(t)=\frac{6t^2+2}{9t^4-2t^2+1}\langle 1-3t^2,2t,0\rangle$
+     </li>
+    </ul>
+   </li>
+   <li class="slide question">
+    Which component dominates for large $t$? How about for $t$ near $0$? Consistent with observations?
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2>
+   Examples
+  </h2>
+  <h3>
+   Do the third: the helix $(\cos(t),\sin(t),t)$
+  </h3>
+  <p class="slide">
+   <span class="important">
+    To calculate:
+   </span>
+   find the unit tangent and normal vectors, then calculate components of acceleration.
+  </p>
+  <ul>
+   <li class="slide">
+    Unit tangent: $\mathbf T(t)=$
+   </li>
+   <li class="slide">
+    Unit normal: $\mathbf N(t)=$
+   </li>
+   <li class="slide">
+    Acceleration: $\mathbf a(t)=$
+   </li>
+   <li class="slide">
+    The components of $\mathbf a(t)$ in the directions of $\mathbf T(t)$ and $\mathbf N(t)$:
+    <ul>
+     <li class="slide">
+      $(\mathbf a(t)\cdot\mathbf T(t))\mathbf T(t)=$
+     </li>
+     <li class="slide">
+      $(\mathbf a(t)\cdot\mathbf N(t))\mathbf N(t)=$
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2>
+   Examples
+  </h2>
+  <h3>
+   Do the third: the helix $(\cos(t),\sin(t),t)$
+  </h3>
+  <p>
+   <span class="important">
+    To calculate:
+   </span>
+   find the unit tangent and normal vectors, then calculate components of acceleration.
+  </p>
+  <ul>
+   <li>
+    Unit tangent: $\mathbf T(t)=\frac{1}{\sqrt{2}}\langle -\sin(t),\cos(t),1\rangle$
+   </li>
+   <li>
+    Unit normal: $\mathbf N(t)=\langle -\cos(t),-\sin(t),0\rangle$
+   </li>
+   <li>
+    Acceleration: $\mathbf a(t)=\langle -\cos(t),-\sin(t),0\rangle$
+   </li>
+   <li>
+    The components of $\mathbf a(t)$ in the directions of $\mathbf T(t)$ and $\mathbf N(t)$:
+    <ul>
+     <li>
+      $(\mathbf a(t)\cdot\mathbf T(t))\mathbf T(t)=\mathbf 0$
+     </li>
+     <li>
+      $(\mathbf a(t)\cdot\mathbf N(t))\mathbf N(t)=\langle -\cos(t),-\sin(t),0\rangle$
+     </li>
+    </ul>
+   </li>
+   <li class="slide">
+    Why does the acceleration have no tangential component?
+   </li>
+   <li class="slide">
+    (More troubling?) Why does the normal component have no $z$-component? How can the particle be climbing??
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2>
+   General theory
+  </h2>
+  <p class="slide">
+   The procedure is always the same: find unit tangent and unit normal, calculate components.
+  </p>
+  <p class="slide">
+   The book has a discussion of various formulas, deductions using curvature, the product rule, etc.
+  </p>
+  <p class="slide">
+   The upshot: given a path $\mathbf r(t)$ with unit tangent $\mathbf T(t)$ and unit normal $\mathbf N(t)$, we can write the acceleration $\mathbf a=a_T\mathbf T+a_N\mathbf N$ where
+  </p>
+  <p class="slide">
+   $$a_T=\frac{\mathbf r'(t)\cdot\mathbf r''(t)}{|\mathbf r'(t)|}\qquad\quad a_N=\frac{|\mathbf r'(t)\times\mathbf r''(t)|}{|\mathbf r'(t)|}$$
+  </p>
+  <p class="slide question">
+   Do one: the electron/rubber blob $$\mathbf f(t)=\langle \cos(t)(2-\cos(4t)),\sin(t)(2-\cos(4t)),\sin(4t)\rangle$$
+  </p>
+ </section>
+</div>

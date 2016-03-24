@@ -1,0 +1,85 @@
+<div id="insertedcontent">
+ <section class="slide">
+  <h1>
+   Vector calculus: derivatives
+  </h1>
+ </section>
+ <section class="slide">
+  <h2>
+   Question
+  </h2>
+  <p>
+   A fun-loving electron is traveling in a spiral path around the surface of a torus.
+  </p>
+  <ul>
+   <li class="slide">
+    The radius of the torus (i.e., the radius of the circle at the center of the tube) is $2$ and the diameter of the circular cross-section is $1$.
+   </li>
+   <li class="slide">
+    The electron starts at position $(1,0,0)$, travels at a constant angular velocity around the vertical axis of $1$ radian per second, and its path winds up and around the torus $4$ times before it returns to its starting position.
+   </li>
+  </ul>
+  <p class="slide">
+   What is the position and velocity of the electron at time $t$?
+  </p>
+ </section>
+ <section class="slide">
+  <h2>
+   Fun-loving electron in action
+  </h2>
+  <div id="electrontoruscontainer">
+  </div>
+ </section>
+ <section class="slide">
+  <h2>
+   It moves!
+  </h2>
+  <p class="slide">
+   Using the tools from last time, here is a parametric description of the motion:
+  </p>
+  <p class="slide">
+   $$(x,y,z)=(\cos(t)(2-\cos(4t)),\sin(t)(2-\cos(4t)),\sin(4t))$$
+  </p>
+  <p class="slide">
+   In vector form:
+  </p>
+  <p class="slide">
+   $$\mathbf f(t)=\langle \cos(t)(2-\cos(4t)),\sin(t)(2-\cos(4t)),\sin(4t)\rangle$$
+  </p>
+  <p class="slide">
+   What is the velocity? What
+   <em>
+    should
+   </em>
+   it be?
+  </p>
+ </section>
+ <section class="slide">
+  <h2>
+   Velocity: derivative of position, right?
+  </h2>
+  <p class="slide">
+   We should have that the velocity of the electron is $$\mathbf v(t)=\mathbf f'(t).$$
+   <span class="slide">
+    But what is this?
+   </span>
+  </p>
+  <p class="slide">
+   Classical definition of the derivative still works for vector-valued functions:
+  </p>
+  <p class="slide">
+   $$\mathbf f'(t)=\lim_{h\to 0}\frac{\mathbf f(t+h)-\mathbf f(t)}{h}$$
+  </p>
+  <p class="slide">
+   As usual, the derivative of the position
+   <span class="important">
+    vector
+   </span>
+   is the velocity
+   <span class="important">
+    vector
+   </span>
+   .
+  </p>
+ </section>
+</div>

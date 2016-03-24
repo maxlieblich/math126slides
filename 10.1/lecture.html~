@@ -1,0 +1,211 @@
+<div id="insertedcontent" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+    <section>
+        <h1>Lecture 10</h1>
+    </section>
+
+    <section>
+        <h2>Behind us</h2>
+        <ul class="incremental">
+            <li>Differentiation and integration of vector-valued functions</li>
+            <li>Polar coordinates</li>
+        </ul>
+        <div class="incremental">
+        <h2>Logistics</h2>
+        <ul>
+            <li>Exam experience on Thursday</li>
+            <li class="slide">Homework due tomorrow at 11 PM</li>
+        </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Ahead</h2>
+        <h3>Today: arc length and curvature</h3>
+        <p>("Today" is more than one lecture worth of material.)</p>
+        <h3>Next: cleanup, test review</h3>
+        <p>Read Sections 10.3, 13.3.
+            <em>We don't cover everything in lecture or section.
+                Failure to study might make you stupid.</em></p>
+    </section>
+
+    <section>
+        <h1 class="question">Questions!</h1>
+    </section>
+
+    <section>
+        <h2>Kangaroos<span class="important">++</span></h2>
+
+        <p class="slide">A joey (baby kangaroo) is riding in her mother's pouch with a sophisticated inertial navigation
+            system. She is too small to see out of the pouch, but her system records the velocity vector at any
+            time.</p>
+        <ul class="incremental">
+            <li>The joey records the velocity at time $t$ as $$\mathbf v(t)=\langle 1,t,\sin(t)\rangle$$
+            </li>
+            <li>The joey starts at the point $(0,0,1)$</li>
+            <li>Last time: the position is $\mathbf f(t)=\langle t,\frac{1}{2}t^2,2-\cos(t) \rangle$</li>
+            <li class="slide important">New question: How long is the joey's path between $t=0$ and $t=15$?</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Distance by accretion</h2>
+        <p>How can we calculate the distance travelled by the joey from $t=a$ to $t=b$?</p>
+        <ul>
+            <li class="slide">Linear approximation to function near time $t=s$: $\mathbf L(t)=\mathbf f(0)+t\mathbf f'(s)$.</li>
+            <li class="slide">For a small change $\Delta(t)$, the distance travelled is thus approximately $\Delta(s)\approx|\mathbf f'(t)|\Delta(t)$.</li>
+            <li class="slide">The resulting Riemann sums approximate the integral
+                $$s(t)=\int_a^b|\mathbf f'(t)|dt.$$</li>
+            <li class="slide"><span class="red"> Important Note</span>: when you reverse direction, the distance still adds up!</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Practical distance, I</h2>
+        <div class="incremental">
+        <p>If we have $\mathbf f(t)=\langle x(t),y(t),z(t)\rangle$ then the distance
+            from the starting point $t=a$ to a variable time $T$ is</p>
+            <p>$$s(T)=\int_a^T\sqrt{(x'(t)^2+(y'(t))^2+(z'(t))^2)}dt.$$</p>
+            <p>$$s(T)=\int_0^T\sqrt{1+t^2+\sin^2(t)}dt$$</p>
+        <p>Evaluating this function seems rather mysterious in general.
+            Using numerical methods, we get a concrete answer for $T=15$:</p>
+            <p>$$s(15)=115.255\ldots.$$</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Practical distance, I</h2>
+
+            <p>If we have $\mathbf f(t)=\langle x(t),y(t),z(t)\rangle$ then the distance
+                from the starting point $t=a$ to a variable time $T$ is</p>
+            <p>$$s(T)=\int_a^T\sqrt{(x'(t)^2+(y'(t))^2+(z'(t))^2)}dt.$$</p>
+        <div class="incremental">
+            <p>Try one:</p>
+            <p>What is the distance of the cylinder path $\mathbf f(t) = \langle \cos(t), \sin(t), t/2\pi\rangle,$ from $t=0$ to $t=T$?</p>
+            <p class="red">Move on only when ready for the answer!</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Practical distance, I</h2>
+
+        <p>If we have $\mathbf f(t)=\langle x(t),y(t),z(t)\rangle$ then the distance
+            from the starting point $t=a$ to a variable time $T$ is</p>
+        <p>$$s(T)=\int_a^T\sqrt{(x'(t)^2+(y'(t))^2+(z'(t))^2)}dt.$$</p>
+        <div class="incremental">
+            <p>Plugging/chugging:</p>
+            <p>$$\int_0^T\sqrt{\frac{4\pi^2+1}{4\pi^2}}dt = \frac{T\sqrt{4\pi^2+1}}{2\pi}$$</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Distance vs arc length</h2>
+        <div class="incremental">
+            <p><span class="red">Important: </span> the integrals above give the <b>total distance traveled</b>.</p>
+            <p>If you <span class="red">never reverse direction</span>, you are also computing the length of the path,
+            not just your choice of traversal.</p>
+            <p>The physical length of the path is the <span class="red">arc length</span>.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Practical arc length, II</h2>
+        <div class="incremental">
+        <p>Here's a funny special case. Suppose that $|\mathbf f'(t)|=1$ for all $t$.
+            Then the distance traversed from time $0$ to time $T$ is
+            $$s(T)=\int_0^T|\mathbf f'(t)|dt=\int_0^T1dt=T.$$</p>
+        <p>In typical circumstances (called <q>smooth</q>: $\mathbf f'(t)$ is never $0$),
+            one can <span class="important">reparametrize</span> the curve using arc length instead of $t$.</p>
+        <p>Example: for the unit circle, the arc length parametrization is
+            $$\langle x,y\rangle=\langle\cos(s),\sin(s)\rangle.$$</p>
+        <p>Meaning: the arc length as $s$ goes from $0$ to $T$ is $T$!</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Practical arc length, II</h2>
+        <div class="incremental">
+            <p>A parametric vector function $\mathbf f(t)$ is <span class="red">parametrized by arc length</span> or
+                an <span class="red">arc length parametrization</span> if the arc length traced by $\mathbf f$ between
+                $t=a$ and $t=b$ is $b-a$.</p>
+            <p>$$\int_a^b|\mathbf f'(t)|dt=b-a$$</p>
+        <p>How do you find these things?</p>
+        <ul class="incremental">
+            <li>Start with a parametrization: $\mathbf f(t)$.</li>
+            <li>Hypothetical reparametrization: $t=t(s)$.</li>
+            <li>Chain rule: $|\mathbf f'(t)| = |\mathbf f'(t)t'(s)|$: want $t'(s) = |\mathbf f'(t(s))|^{-1}$ for all $s$</li>
+        </ul>
+        </div>
+    </section>
+
+
+    <section>
+        <h2>Practical arc length, II</h2>
+        <div class="incremental">
+            <p>Example: circle of radius $2$, parametrized by $\mathbf f(t)=\langle 2\cos(t), 2\sin(t)\rangle$</p>
+            <p>$$\mathbf f'(t) = \langle -2\sin(t), 2\cos(t)\rangle$$</p>
+            <p>$$|\mathbf f'(t)|=\sqrt{4\sin^2(t)+4\cos^2(t)}=2$$</p>
+            <p>So: solve $t'(s)=1/2$; one solution is $t=s/2$</p>
+            <p>End result: arc length parametrization of circle of radius $2$ is $\mathbf f(s)=\langle 2\cos(s/2),2\sin(s/2)\rangle$</p>
+            <p class="slide question">Find the arc length parametrization of the circle of radius $r$.</p>
+        </div>
+    </section>
+
+
+    <section>
+        <h2>Unit tangent vectors</h2>
+        <p class="slide">Something remarkable happens when parametrizing curves by arc length: <span class="slide question">every tangent vector has length $1$.</span></p>
+        <p class="slide">We can do this more generally whenever we know that $\mathbf f'(t)\neq 0$.</p>
+        <p class="slide">The <span class="important">unit tangent vector</span> to the curve $\mathbf f(t)$ at a point $t=a$ is $$\mathbf T(a)=\frac{\mathbf f'(a)}{|\mathbf f'(a)|}.$$</p>
+        <p class="slide">Example: for the joey with $\mathbf f'(t)=\langle 1,t,\sin(t)\rangle$, the unit tangent vector at time $a$ is
+            $$\mathbf T(a)=\frac{1}{\sqrt{1+t^2+\sin^2(t)}}\langle 1,t,\sin(t) \rangle.$$</p>
+    </section>
+    <section>
+        <h2 class="question">Practice</h2>
+        <p class="slide">Compute the unit tangent to the parabola $y=x^2$ at the point $(a,a^2)$.</p>
+        <p><span class="important slide">Hint:</span> <span class="slide">one way to do this is to parametrize the path first, say using $x=t$. Then calculate $\mathbf f'(t)/|\mathbf f'(t)|$. What if you parametrize (half of) the parabola as $\langle\sqrt t,t\rangle$ instead?</span></p>
+    </section>
+    <section>
+        <h2>The benefits of all of this</h2>
+        <p class="slide">Why work with arc length and unit tangents?</p>
+        <ul>
+            <li class="slide">Capture intrinsic <span class="important">geometric</span> information, <span class="slide">not artifacts of the choices we made in our <span class="important">description</span>.</span></li>
+            <li class="slide">Recovers delicate static information about the shape.</li>
+        </ul>
+        <p class="slide">For example: $\mathbf T'(t)\cdot\mathbf T(t)=0.$ I.e., $\mathbf T'(t)$ is perpendicular to $\mathbf T(t)$.</p>
+        <p class="slide">Indeed, $$0=\frac{d}{dt}1=\frac{d}{dt}|\mathbf T(t)|=\frac{d}{dt}\left(\mathbf T(t)\cdot\mathbf T(t)\right)=2\mathbf T(t)\cdot\mathbf T'(t).$$</p>
+        <p class="slide">Meaning: $\mathbf T'(t)$, unlike the acceleration in general, is always changing the tangent to the curve in the <q>most efficient</q> way.</p>
+    </section>
+    <section>
+        <h2>Curvature</h2>
+        <p class="slide">The <span class="important">curvature</span> of the smooth parametric curve $\mathbf f(t)$ is defined to be $$\kappa(t)=\left|\frac{d\mathbf T(t)}{ds}\right|,$$ where $s$ is the arc length function.</p>
+        <p class="slide">Since $s'(t)=|\mathbf f'(t)|$, we also have $\kappa(t)=|\mathbf T'(t)|/|\mathbf f'(t)|$.</p>
+        <p class="slide">A lot to digest!</p>
+        <p class="slide">When $\mathbf f$ is already paramterized by arc length, this simplifies to $$\kappa(s)=|\mathbf f''(s)|,$$ the acceleration.</p>
+        <p class="slide">In practice, this is <em>not</em> how you will compute it (because you won't have paths parametrized by arc length most of the time).</p>
+    </section>
+    <section>
+        <h2>Examples</h2>
+        <h3><em>The Circle of Radius $r$</em> and <em>The Parabola Fights Back</em>.</h2>
+        <p class="slide">The equations parametrizing with arc length: $\mathbf f(s)=\langle r\cos(s/r),r\sin(s/r)\rangle$.</p>
+        <p class="slide">Thus, $$\kappa(s)=\left|\left\langle -\frac{1}{r}\cos\left(\frac{s}{r}\right),-\frac{1}{r}\sin\left(\frac{s}{r}\right)\right\rangle\right|=\frac{1}{r}.$$</p>
+        <p class="slide">Makes sense: <span class="slide">the curvature of a circle of large radius is small.</span> <span class="slide">After all, the path is basically a straight line!</span></p>
+        <p class="slide question">What about for something like the parabola? Try it. You might consider using $\mathbf f(t)=\langle t,t^2\rangle$ and $\kappa=|\mathbf T'|/|\mathbf f'|$, together with your calculation of $\mathbf T$ from before. <span class="slide important">What a mess!</p>
+    </section>
+    <section>
+        <h2>Curvature in practice</h2>
+        <p class="slide">Mathematicians have thought about this one pretty hard, and here is what turns out to happen:</p>
+        <p class="slide">The curvature of the smooth path parametrized by $\mathbf f(t)$ is $$\kappa(t)=\frac{|\mathbf f'(t)\times\mathbf f''(t)|}{|\mathbf f'(t)|^3}.$$ <span class="slide">Your book contains a proof!</span></p>
+        <p class="slide">We can dispatch the parabola $\mathbf f(t)=\langle t,t^2\rangle$:</p>
+        <p class="slide">$$\kappa(t)=\frac{|\langle 1,2t,0\rangle\times\langle 0,2,0\rangle|}{(1+4t^2)^\frac{3}{2}}=\frac{2}{(1+4t^2)^\frac{3}{2}}.$$</p>
+    </section>
+    <section>
+        <h2 class="question">Do one!</h2>
+        <p>Recall the motion of the joey: $\mathbf f(t)=\langle t,\frac{1}{2}t^2,2-\cos(t)\rangle$.</p>
+        <p>Calculate the limit of the curvature as $t\to\infty$.</p>
+        <p>Formulas for curvature: $$\kappa(t)=\left|\frac{d\mathbf T}{ds}\right|=\frac{|\mathbf T'(t)|}{|s'(t)|}=\frac{|\mathbf f'(t)\times\mathbf f''(t)|}{|\mathbf f'(t)|^3}$$</p>
+    </section>
+    <section>
+        <h2>Next time: <em>test review!</em></h2>
+        <a href="http://www.mathjax.org/"> <img title="Powered by MathJax"
+                                                src="http://www.mathjax.org/badge.gif" border="0" alt="Powered by MathJax"/> </a>
+        <a href="http://www.w3.org/html/logo/"> <img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-graphics-multimedia-semantics.png" width="229" height="64" alt="HTML5 Powered with CSS3 / Styling, Graphics, 3D &amp; Effects, Multimedia, and Semantics" title="HTML5 Powered with CSS3 / Styling, Graphics, 3D &amp; Effects, Multimedia, and Semantics"> </a>
+    </section>
+</div>

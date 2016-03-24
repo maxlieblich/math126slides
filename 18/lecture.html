@@ -1,0 +1,180 @@
+<div id="insertedcontent">
+ <section>
+  <h1>
+   Double integrals over regions
+  </h1>
+ </section>
+ <section>
+  <h2>
+   The volume of an eyeball
+  </h2>
+  <p>
+   Here's a simple model of an eyeball: take two spheres, say one of radius $1$ and one of radius $1/2$ and translate the smaller one up by $3/4$.
+  </p>
+  <p>
+   Equations: $x^2+y^2+z^2=1$, $x^2+y^2+(z-3/4)^2=1/4$
+  </p>
+  <div style="float:left">
+   <div>
+    <div id="eyecontainer">
+    </div>
+   </div>
+  </div>
+  <p class="question">
+   What is the total volume enclosed in the eyeball (including cornea)?
+  </p>
+  <p class="question">
+   Hope (?): set up some kind of double integrals that calculate what we want.
+  </p>
+  <p class="question">
+   Think very hard about actually calculating the integrals....
+  </p>
+ </section>
+ <section>
+  <h2>
+   Find the sticking point
+  </h2>
+  <p>
+   You know about double integrals over rectangles.
+  </p>
+  <p>
+   Now think about where your tools might fail in attacking the eyeball problem.
+  </p>
+  <div style="float:left">
+   <div id="eye2container">
+   </div>
+  </div>
+  <p style="margin-top:50px">
+   To get started, you might want to think about how you would like to use the magic of calculus to calculate the extra volume contained in the cornea. (Yes, this question is vague on purpose.)
+  </p>
+ </section>
+ <section>
+  <h2>
+   The crux
+  </h2>
+  <p class="slide">
+   The two spheres intersect in a
+   <span class="important">
+    circle
+   </span>
+   .
+  </p>
+  <p class="slide">
+   How do we take double integrals over interesting regions?
+  </p>
+ </section>
+ <section>
+  <h2>
+   Miracle? Math!
+  </h2>
+  <p class="slide">
+   Here's something
+   <span class="important">
+    absolutely amazing
+   </span>
+   .
+  </p>
+  <p class="slide">
+   When we take an iterated integral $\int_c^d\int_a^bf(x,y)dxdy$,
+  </p>
+  <p class="slide" style="margin-left:400px">
+   we can
+   <span class="important">
+    let $a$ and $b$ be functions of $y$!
+   </span>
+  </p>
+  <p class="slide">
+   (And we can do the reverse if we integrate in the other order. Make the
+   <span class="important">
+    limits on the inner integral functions of the outer variable
+   </span>
+   .)
+  </p>
+  <p class="slide">
+   After all, we're treating $y$ like a constant when we integrate with respect to $x$.
+  </p>
+  <p class="slide">
+   All that happens is that the limits of the integral change when we change the (static) value of $y$.
+  </p>
+ </section>
+ <section>
+  <h2>
+   Example
+  </h2>
+  <p class="slide">
+   Let's return to the function $f(x,y)=x+y$, but let's integrate it over the region inside the parabola $x=y^2$ between $x=0$ and $x=1$.
+  </p>
+  <p class="slide">
+   <img src="18/region.jpg" style="float:left;margin-right:12px;margin-top:20px;width:300px">
+   </img>
+  </p>
+  <p class="slide">
+   The integral becomes
+   <span style="font-size:75%">
+    $\int_0^1\int_{-\sqrt x}^\sqrt{x} (x+y)dydx$
+   </span>
+   .
+  </p>
+  <p class="slide">
+   Inner:
+   <span style="font-size:75%">
+    $\int_{-\sqrt x}^{\sqrt x}(x+y)dy=xy+\frac{1}{2}y^2\Bigr|_{-\sqrt x}^{\sqrt x}=2x^{3/2}$
+   </span>
+   .
+  </p>
+  <p class="slide">
+   Outer:
+   <span style="font-size:75%">
+    $\int_0^12x^{3/2}dx=\frac{4}{5}x^{5/2}\Bigr|_0^1=\frac{4}{5}$
+   </span>
+  </p>
+  <p class="slide important">
+   Piece of cake!
+  </p>
+ </section>
+ <section>
+  <h2>
+   Do one
+  </h2>
+  <p class="slide">
+   Let's warm up a bit for our eyeball problem.
+  </p>
+  <p class="slide question">
+   What is the integral of the function $z=x+\frac{y}{e^{x^2+y^2}}$ over the unit disk?
+  </p>
+  <p class="slide">
+   If you are afraid, try doing the terms one at a time.
+  </p>
+  <p class="slide">
+   Standard operating procedure:
+  </p>
+  <ul>
+   <li class="slide">
+    Write the problem as a double integral.
+   </li>
+   <li class="slide">
+    Choose a way of writing it as an iterated integral, expressing the limits of the inner integral in terms of the outer variable (!).
+   </li>
+   <li class="slide">
+    See what happens. If you get stuck, try it the other way. Or subdivide the region and try again (less common).
+   </li>
+   <li class="slide">
+    Remember: integration is HARD, so you cannot expect answers to come to you easily. If you find it hard, you are doing it right.
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h2>
+   Return of the eyeball
+  </h2>
+  <p class="slide">
+   Set up a calculation of the eyeball volume. You might want to use the formula for the volume of a sphere, but also one or more double integrals over regions.
+  </p>
+  <p class="slide">
+   Equations: $x^2+y^2+z^2=1$, $x^2+y^2+(z-3/4)^2=1/4$
+  </p>
+  <p class="slide">
+   This time you have to think about your own picture. Dark alley, etc., etc.
+  </p>
+ </section>
+</div>

@@ -1,0 +1,198 @@
+<div id="insertedcontent" xmlns="http://www.w3.org/1999/html">
+ <section>
+  <h1>
+   Curvature
+  </h1>
+ </section>
+ <section>
+  <h2>
+   Unit tangent vectors
+  </h2>
+  <p class="slide">
+   Something remarkable happens when parametrizing curves by arc length:
+   <span class="slide question">
+    every tangent vector has length $1$.
+   </span>
+  </p>
+  <p class="slide">
+   We can do this more generally whenever we know that $\mathbf f'(t)\neq 0$.
+  </p>
+  <p class="slide">
+   The
+   <span class="important">
+    unit tangent vector
+   </span>
+   to the curve $\mathbf f(t)$ at a point $t=a$ is $$\mathbf T(a)=\frac{\mathbf f'(a)}{|\mathbf f'(a)|}.$$
+  </p>
+  <p class="slide">
+   Example: for the joey from the "Distance" lecture segment with $\mathbf f'(t)=\langle 1,t,\sin(t)\rangle$, the unit tangent vector at time $a$ is
+            $$\mathbf T(a)=\frac{1}{\sqrt{1+t^2+\sin^2(t)}}\langle 1,t,\sin(t) \rangle.$$
+  </p>
+ </section>
+ <section>
+  <h2 class="question">
+   Practice
+  </h2>
+  <p class="slide">
+   Compute the unit tangent to the parabola $y=x^2$ at the point $(a,a^2)$.
+  </p>
+  <p>
+   <span class="important slide">
+    Hint:
+   </span>
+   <span class="slide">
+    one way to do this is to parametrize the path first, say using $x=t$. Then calculate $\mathbf f'(t)/|\mathbf f'(t)|$. What if you parametrize (half of) the parabola as $\langle\sqrt t,t\rangle$ instead?
+   </span>
+  </p>
+ </section>
+ <section>
+  <h2>
+   The benefits of all of this
+  </h2>
+  <p class="slide">
+   Why work with arc length and unit tangents?
+  </p>
+  <ul>
+   <li class="slide">
+    Capture intrinsic
+    <span class="important">
+     geometric
+    </span>
+    information,
+    <span class="slide">
+     not artifacts of the choices we made in our
+     <span class="important">
+      description
+     </span>
+     .
+    </span>
+   </li>
+   <li class="slide">
+    Recovers delicate static information about the shape.
+   </li>
+  </ul>
+  <p class="slide">
+   For example: $\mathbf T'(t)\cdot\mathbf T(t)=0.$ I.e., $\mathbf T'(t)$ is perpendicular to $\mathbf T(t)$.
+  </p>
+  <p class="slide">
+   Indeed, $$0=\frac{d}{dt}1=\frac{d}{dt}|\mathbf T(t)|=\frac{d}{dt}\left(\mathbf T(t)\cdot\mathbf T(t)\right)=2\mathbf T(t)\cdot\mathbf T'(t).$$
+  </p>
+  <p class="slide">
+   Meaning: $\mathbf T'(t)$, unlike the acceleration in general, is always changing the tangent to the curve in the
+   <q>
+    most efficient
+   </q>
+   way.
+  </p>
+ </section>
+ <section>
+  <h2>
+   Curvature
+  </h2>
+  <p class="slide">
+   The
+   <span class="important">
+    curvature
+   </span>
+   of the smooth parametric curve $\mathbf f(t)$ is defined to be
+   <span class="centermath">
+    $$\kappa(t)=\left|\frac{d\mathbf T(t)}{ds}\right|,$$
+   </span>
+   where $s$ is the arc length function.
+  </p>
+  <p class="slide">
+   Since $s'(t)=|\mathbf f'(t)|$, we also have $\kappa(t)=|\mathbf T'(t)|/|\mathbf f'(t)|$.
+  </p>
+  <p class="slide">
+   A lot to digest!
+  </p>
+  <p class="slide">
+   When $\mathbf f$ is already paramterized by arc length, this simplifies to
+   <span class="centermath">
+    $$\kappa(s)=|\mathbf f''(s)|,$$
+   </span>
+   the acceleration.
+  </p>
+  <p class="slide">
+   In practice, this is
+   <em>
+    not
+   </em>
+   how you will compute it (because you won't have paths parametrized by arc length most of the time).
+  </p>
+ </section>
+ <section>
+  <h2>
+   Examples
+  </h2>
+  <h3>
+   <em>
+    The Circle of Radius $r$
+   </em>
+   and
+   <em>
+    The Parabola Fights Back
+   </em>
+   .
+  </h3>
+  <p class="slide">
+   The equations parametrizing with arc length: $\mathbf f(s)=\langle r\cos(s/r),r\sin(s/r)\rangle$.
+  </p>
+  <p class="slide">
+   Thus,
+   <span class="centermath">
+    $$\kappa(s)=\left|\left\langle -\frac{1}{r}\cos\left(\frac{s}{r}\right),
+                -\frac{1}{r}\sin\left(\frac{s}{r}\right)\right\rangle\right|=\frac{1}{r}.$$
+   </span>
+  </p>
+  <p class="slide">
+   Makes sense:
+   <span class="slide">
+    the curvature of a circle of large radius is small.
+   </span>
+   <span class="slide">
+    After all, the path is basically a straight line!
+   </span>
+  </p>
+  <p class="slide question">
+   What about for something like the parabola? Try it. You might consider using $\mathbf f(t)=\langle t,t^2\rangle$ and $\kappa=|\mathbf T'|/|\mathbf f'|$, together with your calculation of $\mathbf T$ from before.
+   <span class="slide important">
+    What a mess!
+   </span>
+  </p>
+ </section>
+ <section>
+  <h2>
+   Curvature in practice
+  </h2>
+  <p class="slide">
+   Mathematicians have thought about this one pretty hard, and here is what turns out to happen:
+  </p>
+  <p class="slide">
+   The curvature of the smooth path parametrized by $\mathbf f(t)$ is $$\kappa(t)=\frac{|\mathbf f'(t)\times\mathbf f''(t)|}{|\mathbf f'(t)|^3}.$$
+   <span class="slide">
+    Any book or the internet contains a proof!
+   </span>
+  </p>
+  <p class="slide">
+   We can dispatch the parabola $\mathbf f(t)=\langle t,t^2\rangle$:
+  </p>
+  <p class="slide">
+   $$\kappa(t)=\frac{|\langle 1,2t,0\rangle\times\langle 0,2,0\rangle|}{(1+4t^2)^\frac{3}{2}}=\frac{2}{(1+4t^2)^\frac{3}{2}}.$$
+  </p>
+ </section>
+ <section>
+  <h2 class="question">
+   Do one!
+  </h2>
+  <p>
+   Recall the motion of the joey: $\mathbf f(t)=\langle t,\frac{1}{2}t^2,2-\cos(t)\rangle$.
+  </p>
+  <p>
+   Calculate the limit of the curvature as $t\to\infty$.
+  </p>
+  <p>
+   Formulas for curvature: $$\kappa(t)=\left|\frac{d\mathbf T}{ds}\right|=\frac{|\mathbf T'(t)|}{|s'(t)|}=\frac{|\mathbf f'(t)\times\mathbf f''(t)|}{|\mathbf f'(t)|^3}$$
+  </p>
+ </section>
+</div>

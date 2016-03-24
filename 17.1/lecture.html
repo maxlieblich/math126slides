@@ -1,0 +1,170 @@
+<div id="insertedcontent">
+ <section>
+  <h1>
+   Double integrals: Riemann sums
+  </h1>
+ </section>
+ <section>
+  <h2 class="question">
+   How big is Mt. Rainier?
+  </h2>
+  <p class="slide">
+   A large mining company has decided it wants to turn Mt. Rainier into pure profit by smashing and carting the whole thing away one rock at a time (for use in fishtanks). They ask the piglet of calculus to help them calculate the amount of rock they will end up with.
+  </p>
+  <p class="slide question">
+   What are the piglet's options?
+  </p>
+  <p class="slide">
+   (Note: the piglet has access to the Puget Sound LIDAR Consortium's data set.)
+   <!--, thanks to Joe Marcus.)-->
+  </p>
+ </section>
+ <section>
+  <h2>
+   Toy model rides again
+  </h2>
+  <p>
+   Let's think about a toy model given by
+  </p>
+  <p>
+   $$z=\sqrt{\frac{10-x^2-y^2}{e^{x^2+y^2}}}.$$
+  </p>
+  <div id="rainiercontainer">
+  </div>
+ </section>
+ <section>
+  <h2>
+   Crude approximation
+  </h2>
+  <p class="slide">
+   Let's just try to get the volume over the 4 by 4 square centered at the origin.
+  </p>
+  <div class="slide">
+   <p>
+    That oughta do it.
+   </p>
+   <div id="blockcontainer">
+   </div>
+  </div>
+ </section>
+ <section>
+  <h2>
+   We can do better than that!
+  </h2>
+  <p class="slide">
+   Let's refine the grid! Vol:
+   <span id="volumeprox">
+   </span>
+  </p>
+  <div class="slide">
+   <div id="riemanngui" style="float:right;position:relative;top:-50px;font-size:small">
+   </div>
+   <p>
+    Change the number of blocks, observe the effect on the approximation. "N" means "N by N grid"
+   </p>
+   <div id="riemanncontainer">
+   </div>
+  </div>
+ </section>
+ <section>
+  <h2>
+   Keep going!
+  </h2>
+  <p>
+   Just to show you, here is what happens for a 100 by 100 grid.  Vol:
+   <span id="volumesweet">
+   </span>
+  </p>
+  <div id="goodapproxcontainer">
+  </div>
+  <p class="slide">
+   That's a mighty fine approximation you have there. It would be a shame if anything happened to it....
+  </p>
+ </section>
+ <section>
+  <h2>
+   Does this remind you of anything?
+  </h2>
+  <p class="slide">
+   Are we just playing with blocks?
+  </p>
+  <p class="slide">
+   LEGO is Danish, but these things are
+   <span style="text-decoration:underline">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   </span>
+   .
+  </p>
+ </section>
+ <section>
+  <h2>
+   Remember Riemann sums?
+  </h2>
+  <p class="slide">
+   In your calculus youth, you learned about integration via
+   <span class="important">
+    Riemann sums
+   </span>
+   .
+  </p>
+  <p class="slide">
+   <span class="important">
+    Recall:
+   </span>
+   given a function $f(x)$ defined on an interval $[a,b]$ and an integer $n$, we form the $n$th Riemann sum like this:
+  </p>
+  <p class="slide">
+   $$S_n=\sum_{i=1}^nf\left(a+(2i-1)\frac{b-a}{2n}\right)\frac{1}{n}=\sum_{i=1}^nf(x_i)\Delta(x)$$
+  </p>
+  <p class="slide">
+   <span class="important">
+    The idea:
+   </span>
+   divide the interval into $n$ equal pieces, evaluate the function in the middle of each interval, and add up the areas of the resulting rectangles.
+  </p>
+ </section>
+ <section>
+  <h2>
+   Stew in brain juices
+  </h2>
+  <p class="slide">
+   Try to set up a similar thing for functions of two variables $f(x,y)$ over a rectangle $[a,b]\times[c,d]$: $x$ goes from $a$ to $b$ and $y$ goes from $c$ to $d$.
+  </p>
+  <p class="slide">
+   Some components you might want to use to start:
+  </p>
+  <p class="slide">
+   $$\sum_{i=1}^m\sum_{j=1}^n\qquad\qquad \Delta(x)\qquad\qquad \Delta(y)\qquad\qquad f\qquad\qquad x_{ij}\qquad\qquad y_{ij}$$
+  </p>
+  <p class="slide">
+   This is not just a mindless exercise. How would you program a computer to make these approximations? Work backwards from there if you want!
+  </p>
+  <p class="slide" style="color:#aaaaaa">
+   Maybe I just worked some magic to make those models before.
+  </p>
+ </section>
+ <section>
+  <h2>
+   Riemann sums over rectangles
+  </h2>
+  <p class="slide">
+   Here's one possible answer:
+  </p>
+  <p class="slide">
+   Suppose $f(x,y)$ is defined and continuous on the rectangle $$[a,b]\times[c,d]=\{(x,y) | a\leq x\leq b, c\leq y\leq d\}.$$ "The"
+   <span class="important">
+    $n$th Riemann sum of $f$
+   </span>
+   is
+  </p>
+  <p class="slide">
+   $$S_n=\sum_{i=1}^n\sum_{j=1}^nf(x_{ij},y_{ij})\Delta(x)\Delta(y),$$
+  </p>
+  <p class="slide">
+   where $(x_{ij},y_{ij})$ is a point in the $ij$-subrectangle $$\left[a+(i-1)\frac{b-a}{n},a+i\frac{b-a}{n}\right]\times\left[c+(j-1)\frac{d-c}{n},c+j\frac{d-c}{n}\right].$$
+  </p>
+  <p class="slide question">
+   Where the heck are the rectangles in there?!
+  </p>
+ </section>
+</div>
